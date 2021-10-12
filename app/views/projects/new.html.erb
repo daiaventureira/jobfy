@@ -1,0 +1,34 @@
+<%= form_with(model: @projects) do |f|%>
+    <div>
+        <%= f.label :title, 'Título:' %>
+        <%= f.text_field :title %>
+    </div>
+
+    <div>
+        <%= f.label :description, 'Descrição:'%>
+        <%= f.text_field :description%>
+    </div>
+
+    <div>
+        <%= f.label :skills, 'Habilidades:'%>
+        <%= f.text_field :skills%>
+    </div>
+
+    <div>
+        <%= f.label :price_per_hour, 'Preço por hora:'%>
+        <%= f.number_field :price_per_hour%>
+    </div>
+
+    <div>
+        <%= f.label :deadline, 'Data limite:' %>
+        <%= f.date_field :deadline%>
+    </div>
+
+     <div>
+        <%= f.label :remote, 'Remoto'%>
+        <%= f.check_box :remote%>
+    </div>
+
+    <%= f.submit 'Adicionar' %>
+
+<% end %>

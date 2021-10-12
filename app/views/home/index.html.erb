@@ -2,4 +2,34 @@
 <h2>Bem vindo ao jobfy</h2>
 <h3>Conectando desenvolvedores e projetos</h3> 
 
-<%= link_to 'Entrar', new_user_session_path%>
+   <% @projects.each do |p|%>
+   <div>
+      Título: <%= p.title%>
+   </div>
+   <div>
+       Descrição: <%= p.description%>
+   </div>
+   <div>
+       Habilidades: <%= p.skills%>
+   </div>
+   <div>
+       Preço por hora: <%= number_to_currency(p.price_per_hour, unit: 'R$', separator: ',', format: '%u %n') %>
+   </div>
+   <div>
+    <dt>Local de atuação:</dt>
+    <% if p.remote? %>
+            <dd>Remoto</dd>
+        <% else %>
+            <dd>Presencial</dd>
+        <% end %>
+    </div>
+   <div>
+      Data limite: <%= p.deadline.strftime("%d/%m/%Y")            #=> "at 08:37AM"
+
+%>
+   </div>
+    <% end %>
+ 
+
+ 
+
