@@ -11,12 +11,18 @@
   </head>
 
   <body>
-  <% if user_signed_in?%>
-    <p><%= current_user.email%><p>
+  <% if user_signed_in? %>
+    <p><%= current_user.email %><p>
     <p><%= link_to 'Logout', destroy_user_session_path, method: :delete%>
     <p><%= link_to 'Adicionar projeto', new_project_path %>
+  <% elsif professional_signed_in? %>
+    <p><%= current_professional.email%><p> 
+    <p><%= link_to 'Criar perfil'%></p>
+    <p><%= link_to 'Ver projetos disponíveis' %></p>
+    <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete%></p>
   <% else %>
-    <p><%= link_to 'Entrar', new_user_session_path%>
+    <p><%= link_to 'Entrar', new_user_session_path %>
+    <p><%= link_to 'Entrar como profissional', new_professional_session_path%>
   <% end %>
   <p><%= notice %></p>
   <p><%= alert %></p>

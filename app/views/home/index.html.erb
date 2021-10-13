@@ -2,7 +2,10 @@
 <h2>Bem vindo ao jobfy</h2>
 <h3>Conectando desenvolvedores e projetos</h3> 
 
-   <% @projects.each do |p|%>
+
+ 
+
+<% @projects.each do |p|%>
    <div>
       Título: <%= p.title%>
    </div>
@@ -24,12 +27,7 @@
         <% end %>
     </div>
    <div>
-      Data limite: <%= p.deadline.strftime("%d/%m/%Y")            #=> "at 08:37AM"
-
-%>
+      Data limite: <%= p.deadline.strftime("%d/%m/%Y") %>
    </div>
-    <% end %>
+<% end %>
  
-
- 
-
