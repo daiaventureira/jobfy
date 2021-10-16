@@ -9,19 +9,23 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
   <% if user_signed_in? %>
     <p><%= current_user.email %><p>
     <p><%= link_to 'Logout', destroy_user_session_path, method: :delete%>
     <p><%= link_to 'Adicionar projeto', new_project_path %>
-  <% elsif professional_signed_in? %>
+  <% elsif professional_signed_in? && current_professional.profile %>
     <p><%= current_professional.email%><p> 
-    <p><%= link_to 'Criar perfil'%></p>
-    <p><%= link_to 'Ver projetos disponíveis' %></p>
+         <%= link_to 'Veja seu perfil', professional_profile_path(current_professional, current_professional.id) %>
+    <p><%= link_to 'Ver projetos disponíveis', projects_path %></p>
     <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete%></p>
+  <% elsif professional_signed_in? && !current_professional.profile%>
+    <p>You need to complete your profile before see projects</p>
+    <p> <%= link_to 'Crie', professional_path(current_professional) %></p>
+    <p><%= current_professional.email%><p>
+    <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete %></p>
   <% else %>
-    <p><%= link_to 'Entrar', new_user_session_path %>
+    <p><%= link_to 'Entrar como usuário', new_user_session_path %></p>
     <p><%= link_to 'Entrar como profissional', new_professional_session_path%>
   <% end %>
   <p><%= notice %></p>

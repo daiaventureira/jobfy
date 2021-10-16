@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
+
     validate :deadline_lesser_than_current_day
-    
     private
 
     def deadline_lesser_than_current_day

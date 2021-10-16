@@ -45,7 +45,7 @@ describe 'Professional signs up' do
 
     click_on "Logout"
 
-    expect(page).to have_content("Signed out successfully")
+    expect(page).to have_content("Signed out successfully.")
     expect(page).to_not have_current_path("/projects")
     expect(page).to have_current_path("/")
 

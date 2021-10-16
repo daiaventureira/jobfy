@@ -5,7 +5,7 @@ describe 'User access account' do
       
         visit root_path
         
-        click_on 'Entrar'
+        click_on 'Entrar como usuário'
         click_on 'Sign up'
 
         fill_in 'Email', with: 'daiane@souza.com.br'
@@ -24,7 +24,7 @@ describe 'User access account' do
 
         visit root_path 
 
-        click_on "Entrar"
+        click_on "Entrar como usuário"
 
         fill_in "Email", with: user.email 
         fill_in "Password", with: user.password 

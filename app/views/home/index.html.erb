@@ -2,9 +2,6 @@
 <h2>Bem vindo ao jobfy</h2>
 <h3>Conectando desenvolvedores e projetos</h3> 
 
-
- 
-
 <% @projects.each do |p|%>
    <div>
       Título: <%= p.title%>
@@ -30,4 +27,13 @@
       Data limite: <%= p.deadline.strftime("%d/%m/%Y") %>
    </div>
 <% end %>
- 
+
+
+<% if professional_signed_in? && current_professional.profile %>
+    <p><%= current_professional.profile.full_name%></p>    
+    <p><%= current_professional.profile.social_name%></p>  
+    <p><%= current_professional.profile.description%></p>    
+    <p><%= current_professional.profile.educational_background%></p>    
+    <p><%= current_professional.profile.birth_date.strftime("%d/%m/%Y")%></p> 
+    <p><%=image_tag current_professional.profile.avatar%></p>    
+<% end %> 

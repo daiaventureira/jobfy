@@ -1,0 +1,30 @@
+<% if professional_signed_in? %>
+    <%= form_with model: [@professional, @profile] do |f| %>
+    <div>
+      <%= f.label :full_name, 'Nome completo' %>
+      <%= f.text_field :full_name %>
+    </div>
+    <div>
+      <%= f.label :social_name, 'Nome social' %>
+      <%= f.text_field :social_name %>
+    </div>
+    <div>
+      <%= f.label :birth_date, 'Data de nascimento' %>
+      <%= f.date_field :birth_date %>
+    </div>
+      <div>
+      <%= f.label :educational_background, 'Formação' %>
+      <%= f.text_field :educational_background %>
+    </div>
+     <div>
+      <%= f.label :description, 'Descrição' %>
+      <%= f.text_field :description %>
+    </div>
+      <div>
+      <%= f.label :avatar, 'Foto' %>
+      <%= f.file_field :avatar %>
+    </div>
+
+      <%= f.submit 'Criar' %>
+    <% end %>
+  <% end %>
