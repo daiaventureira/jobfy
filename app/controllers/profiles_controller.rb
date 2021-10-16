@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
     @profile.professional = current_professional
     @profile.save
 
-    redirect_to @profile
+    redirect_to root_path
   end
 
   private 

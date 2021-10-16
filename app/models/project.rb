@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
 
+    belongs_to :user
     validate :deadline_lesser_than_current_day
     private
 

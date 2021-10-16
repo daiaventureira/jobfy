@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
 
     def create
         @projects = Project.new(project_params)
+        @projects.user = current_user 
         if @projects.save
             redirect_to root_path, notice: 'Projeto criado com sucesso!'
         else
