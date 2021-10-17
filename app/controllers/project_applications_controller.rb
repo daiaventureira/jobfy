@@ -1,16 +1,16 @@
 class ProjectApplicationsController < ApplicationController 
-  # def index 
-  #   @project_application = ProjectApplication.all
-  # end
+  def index 
+    @project_application = ProjectApplication.all
+  end
   def show 
     @project_application = ProjectApplication.find(params[:id])
   end
   
   def create 
-    # @project_application = current_user.project_application.new(project_application_params)
+    @project_application = current_professional.project_applications.new(project_application_params)
 
-    @project_application = ProjectApplication.new(project_application_params)
-    @project_application.professional = current_professional
+    # @project_application = ProjectApplication.new(project_application_params)
+    # @project_application.professional = current_professional
     @project_application.project = Project.find(params[:project_id])
     @project_application.save
     flash[:notice] = 'Você se candidatou para fazer parte desse projeto com sucesso!'

@@ -1,0 +1,10 @@
+  <% @project_application.each do |p|%>
+    <%if professional_signed_in? && current_professional.id == p.professional_id %>
+
+    <div>
+      <p>Projeto: <%= p.project.title%></p>
+      <p>Introdução <%= p.introduction%></p>
+    </div>
+  <% end %>
+<% end %>
+<%# @profissional.project_application == current_professional  %>

@@ -7,7 +7,7 @@ class Professional < ApplicationRecord
   
   has_one :profile
   has_many :project_applications
-  # has_many :propesrties, through: :property_reservations
+  has_many :projects, through: :project_applications
 
  
 end
