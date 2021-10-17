@@ -1,6 +1,7 @@
 class Project < ApplicationRecord
 
     belongs_to :user
+    has_many :project_applications, dependent: :destroy
     validate :deadline_lesser_than_current_day
     private
 

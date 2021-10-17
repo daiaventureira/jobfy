@@ -16,7 +16,7 @@
     <p><%= link_to 'Adicionar projeto', new_project_path %>
   <% elsif professional_signed_in? && current_professional.profile %>
     <p><%= current_professional.email%><p> 
-         <%= link_to 'Veja seu perfil', professional_profile_path(current_professional, current_professional.id) %>
+     <p><%= link_to 'Veja seu perfil', professional_profile_path(current_professional, current_professional.id) %></p>
     <p><%= link_to 'Ver projetos disponíveis', projects_path %></p>
     <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete%></p>
   <% elsif professional_signed_in? && !current_professional.profile%>

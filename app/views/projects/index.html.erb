@@ -1,26 +1,10 @@
-<% @projects.each do |p|%>
+<% @projects.each do |p| %>
    <div>
-      Título: <%= p.title%>
+     <%=link_to(p.title, p ) %>
    </div>
-   <div>
-       Descrição: <%= p.description%>
-   </div>
-   <div>
-       Habilidades: <%= p.skills%>
-   </div>
-   <div>
-       Preço por hora: <%= number_to_currency(p.price_per_hour, unit: 'R$', separator: ',', format: '%u %n') %>
-   </div>
-   <div>
-    <dt>Local de atuação:</dt>
-    <% if p.remote? %>
-            <dd>Remoto</dd>
-        <% else %>
-            <dd>Presencial</dd>
-        <% end %>
-    </div>
-   <div>
-      Data limite: <%= p.deadline.strftime("%d/%m/%Y") %>
+    <div>
+      Descrição: <%=link_to p.description%>
    </div>
 <% end %>
+
  

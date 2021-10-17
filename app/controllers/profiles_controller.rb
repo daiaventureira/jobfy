@@ -14,6 +14,19 @@ class ProfilesController < ApplicationController
     redirect_to root_path
   end
 
+  def update
+    @profile = Profile.find(params[:id])
+      if @profile.update(profile_params)
+        if @profile.avatar.present?
+            @profile.avatar.attach(@profile.avatar.blob)
+        end
+        redirect_to root_path
+      else
+        render :new
+      end
+  end
+
+
   private 
 
   def profile_params 

@@ -4,7 +4,10 @@ class Professional < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  
   has_one :profile
+  has_many :project_applications
+  # has_many :propesrties, through: :property_reservations
 
  
 end
