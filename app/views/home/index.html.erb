@@ -9,28 +9,31 @@
 <h2 class="font-monospace mt-3 mb-3 lh-lg">Bem vinde ao jobfy!</h2>
 <h3 class="font-monospace mt-3 mb-3 lh-lg">Conectando desenvolvedores e projetos.</h3> 
 
-<% @projects.each do |p|%>
-    <% if user_signed_in? && current_user.id == p.user_id %>
+<div class="row">
+    <% @projects.each do |p|%>
+        <% if user_signed_in? && current_user.id == p.user_id %>
+                <div class="col-sm-6">
+                    <div class="card" >
+                        <div class="card-body">
+                                <h5 class="card-title"> Título: <%= p.title%></h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Descrição: <%= p.description%></h6>
+                                <p class="cart-text ">Habilidades: <%= p.skills%></p>
+                                <p class="card-text"> Preço por hora: <%= number_to_currency(p.price_per_hour, unit: 'R$', separator: ',', format: '%u %n') %></p>
+                            <p class="card-text">
+                                <dt>Local de atuação:</dt>
+                                <% if p.remote? %>
+                                        <dd>Remoto</dd>
+                                    <% else %>
+                                        <dd>Presencial</dd>
+                                    <% end %>
+                                </p>
+                        <p class="card-text">Data limite: <%= p.deadline.strftime("%d/%m/%Y") %></p>
+                        </div>
+                    </div>
+                </div>
+        <% end %>
+    <%end%>
+</div>
 
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title"> Título: <%= p.title%></h5>
-        <h6 class="card-subtitle mb-2 text-muted">Descrição: <%= p.description%></h6>
-        <p class="cart-text ">Habilidades: <%= p.skills%></p>
-        <p class="card-text"> Preço por hora: <%= number_to_currency(p.price_per_hour, unit: 'R$', separator: ',', format: '%u %n') %></p>
-    <p class="card-text">
-        <dt>Local de atuação:</dt>
-        <% if p.remote? %>
-                <dd>Remoto</dd>
-            <% else %>
-                <dd>Presencial</dd>
-            <% end %>
-        </p>
-    <p class="card-text">
-        Data limite: <%= p.deadline.strftime("%d/%m/%Y") %>
-    </p>
-    </div>
-    <% end %>
-<%end%>
 
    
