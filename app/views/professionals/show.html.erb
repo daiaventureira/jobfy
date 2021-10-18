@@ -1,6 +1,7 @@
 <% if professional_signed_in? && !current_professional.profile %>
   <%= form_with model: [@professional, @profile] do |f| %>
     <%= render partial: "shared/flash"%>
+    <%= render "shared/form_errors", form: f %>
    <div class="row mb-3">
         <div>
           <%= f.label :full_name, 'Nome completo', class:"col-sm-2 col-form-label mt-3" %>

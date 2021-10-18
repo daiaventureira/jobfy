@@ -1,6 +1,7 @@
-<h1>Jobfy<h1>
-<h2>Bem vindo ao jobfy</h2>
-<h3>Conectando desenvolvedores e projetos</h3> 
+<h1 class="mb-3 mt-3">Jobfy<h1>
+
+<h2 class="font-monospace mt-3 mb-3 lh-lg">Bem vinde ao jobfy!</h2>
+<h3 class="font-monospace mt-3 lh-lg">Conectando desenvolvedores e projetos.</h3> 
 
 <% @projects.each do |p|%>
     <% if user_signed_in? && current_user.id == p.user_id %>

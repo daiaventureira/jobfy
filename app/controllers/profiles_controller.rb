@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
     redirect_to root_path
 
   if !@profile.save
-    flash[:notice] = "Verifique se os campos estão devidamente preenchidos"
+    flash[:alert] = "Verifique se os campos estão devidamente preenchidos"
   end
   end
 

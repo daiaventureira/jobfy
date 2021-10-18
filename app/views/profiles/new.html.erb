@@ -1,4 +1,5 @@
 <%= form_with(model: [@professional, @profile])  do |f| %>
+          <%= render "shared/form_errors", form: f %>
 
   <div>
     <%= f.label :full_name, 'Nome completo' %>

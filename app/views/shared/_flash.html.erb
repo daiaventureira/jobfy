@@ -1,10 +1,10 @@
 <% if flash[:notice]%>
-    <div class="notification is-info" role="alert">
+    <div class="alert alert-info" role="alert">
         <%= flash[:notice].inspect%>
     </div>
 <% end%>
 <% if flash[:alert]%>
-    <div class="notification is-warning" role="alert">
+    <div class="alert alert-warning" role="alert">
         <%= flash[:alert]%>
     </div>
 <% end %>
