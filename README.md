@@ -46,7 +46,9 @@ Para rodar localmente:
 ``` 
  
 No seu browser digite: "localhost:3000" e isso irá mostrar a seguinte página:
-<img width="1145" alt="Screen Shot 2021-10-17 at 10 59 08 PM" src="https://user-images.githubusercontent.com/44145146/137662544-d104d05c-3669-44c7-8654-8298abf690c2.png">
+
+<img width="1145" alt="Screen Shot 2021-10-18 at 6 33 12 PM" src="https://user-images.githubusercontent.com/44145146/137815493-e841e396-ac48-4427-9ee4-25e13350bebc.png">
+
 
 
 ## informações
