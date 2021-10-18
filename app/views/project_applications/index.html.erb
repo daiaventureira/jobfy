@@ -6,11 +6,11 @@
       </div>
   <% end %>
   <% if professional_signed_in? && current_professional.id == p.professional_id && p.pending? %> 
-      <p>Sua candidatura está pendente</p>
+      <p class="alert alert-primary" role="alert">Sua candidatura está pendente</p>
   <% elsif professional_signed_in? && current_professional.id == p.professional_id  && p.accepted? %>
-      <p> Sua candidatura foi aceita! </p>
+      <p class="alert alert-success" role="alert"> Sua candidatura foi aceita! </p>
   <%elsif professional_signed_in? && current_professional.id == p.professional_id  && p.rejected? %>
-      <p>Sua candidatura foi recusada mas não desanime! Temos muitos projetos que encaixam no seu perfil</p>    
+      <p class="alert alert-danger" role="alert">Sua candidatura foi recusada mas não desanime! Temos muitos projetos que encaixam no seu perfil</p>    
   <% end %>
 <% end %>
   
