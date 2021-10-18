@@ -12,6 +12,10 @@ class ProfilesController < ApplicationController
     @profile.save
 
     redirect_to root_path
+
+  if !@profile.save
+    flash[:notice] = "Verifique se os campos estão devidamente preenchidos"
+  end
   end
 
   def update

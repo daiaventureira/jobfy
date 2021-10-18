@@ -45,11 +45,11 @@
                     <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete, class:"nav-link active"%></p>
                   </li>
                 <% elsif professional_signed_in? && !current_professional.profile%>
-                  <li class="nav-item">
-                    <p> <%= link_to 'Crie', professional_path(current_professional), class:"nav-link active" %></p>
+                <li class="nav-item">
+                    <p><%= link_to current_professional.email, current_professional, class:"nav-link disabled"%><p>
                   </li>
                   <li class="nav-item">
-                    <p><%= link_to current_professional.email, current_professional, class:"nav-link disabled"%><p>
+                    <p> <%= link_to 'Crie', professional_path(current_professional), class:"nav-link active" %></p>
                   </li>
                   <li class="nav-item">
                     <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete, class:"nav-link " %></p>
@@ -70,8 +70,6 @@
       </nav>
       <div class="container">
         <%= render partial: "shared/flash"%>
-        <p><%= notice %></p>
-        <p><%= alert %></p>
         <%= yield %>
       </div>
   </body>
