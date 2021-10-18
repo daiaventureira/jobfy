@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :projects do 
     resources :project_applications, only: %i[create show], shallow: true do 
       post 'accept', on: :member
+      post 'reject', on: :member
     end
   end
   resources :project_applications

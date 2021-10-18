@@ -14,6 +14,7 @@ describe 'Professional visits own profile' do
     fill_in 'Data de nascimento', with: date
     fill_in 'Descrição', with: 'Olá essa é minha descriçao'
     fill_in 'Formação', with: 'Olá essa é minha formação'
+    fill_in 'Experiência em anos', with: '2'
     attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
 
     click_on "Criar"  
@@ -39,6 +40,7 @@ describe 'Professional visits own profile' do
     fill_in 'Data de nascimento', with: date
     fill_in 'Descrição', with: 'Olá essa é minha descriçao'
     fill_in 'Formação', with: 'Olá essa é minha formação'
+    fill_in 'Experiência em anos', with: '2'
     attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
 
     click_on "Criar"  

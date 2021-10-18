@@ -16,6 +16,7 @@ describe 'Professional fill profile when authenticated' do
     fill_in 'Data de nascimento', with: date
     fill_in 'Descrição', with: 'Olá essa é minha descriçao'
     fill_in 'Formação', with: 'Olá essa é minha formação'
+    fill_in 'Experiência em anos', with: '2'
     attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
 
     click_on "Criar"
@@ -27,6 +28,7 @@ describe 'Professional fill profile when authenticated' do
     expect(page).to have_content('Olá essa é minha descriçao')
     expect(page).to have_content('Olá essa é minha formação')
     expect(page).to have_content(27/04/1997)
+    expect(page).to have_content(/2/)
     expect(page).to have_css("img[alt=Foto]")
   end
 
@@ -44,9 +46,9 @@ describe 'Professional fill profile when authenticated' do
   # it "and navigate successfully" do
 
   #   professional = Professional.create!(email: 'user@user.com.br', password: '123456')
-  #   page = attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
+  #   foto = attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
 
-  #   profile = Profile.create!(full_name: 'Joao', social_name: 'Lu', birth_date: '25/12/1997', description: 'Engenheiro de software a 2 dois anos trabalho com ruby e ruby on rails', avatar: page, professional: professional)
+  #   profile = Profile.create!(image: foto, full_name: 'Joao', social_name: 'Lu', birth_date: '25/12/1997', description: 'Engenheiro de software a 2 dois anos trabalho com ruby e ruby on rails', avatar: page, professional: professional)
   #   login_as professional, scope: :professional
 
   #   visit root_path

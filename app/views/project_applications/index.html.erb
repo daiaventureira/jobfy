@@ -1,19 +1,19 @@
 <% @project_application.each do |p|%>
-    <%if professional_signed_in? && current_professional.id == p.professional_id %>
+   <%if professional_signed_in? && current_professional.id == p.professional_id %>
       <div>
         <p>Projeto: <%= p.project.title%></p>
         <p>Introdução <%= p.introduction%></p>
       </div>
-    <% end %>
-    <% if p.pending?%>
+  <% end %>
+  <% if professional_signed_in? && current_professional.id == p.professional_id && p.pending? %> 
       <p>Sua candidatura está pendente</p>
-      <% elsif p.accepted? %>
+  <% elsif professional_signed_in? && current_professional.id == p.professional_id  && p.accepted? %>
       <p> Sua candidatura foi aceita! </p>
-      <%else%>
-      <p>Sua candidatura foi recusada mas não desanime! Temos muitos projetos que encaixam no seu perfil</p>
-    <% end %>
+  <%elsif professional_signed_in? && current_professional.id == p.professional_id  && p.rejected? %>
+      <p>Sua candidatura foi recusada mas não desanime! Temos muitos projetos que encaixam no seu perfil</p>    
+  <% end %>
 <% end %>
-
+  
 <% if user_signed_in?%>
 <p>Candidaturas</p>
   <% @project_application.each do |p|%>
@@ -21,11 +21,13 @@
         <div>
           <p>Projeto: <%= p.project.title%></p>
           <p>Introdução <%= p.introduction%></p>
+          <p>Nome do profissional: <%= p.professional.profile.full_name %></p>
+          <p>Data de nascimento do profissional: <%= p.professional.profile.birth_date %></p>
           <dt>Status:</dt>
           <dd><%= p.status%></dd>
           <% if p.pending?%>
             <p><%= link_to 'Aceitar', accept_project_application_path(p.id), method: :post%></p>
-            <p><%= link_to 'Recusar', rejecte_project_application_path(p.id), method: :post%></p>
+            <p><%= link_to 'Recusar', reject_project_application_path(p.id), method: :post%></p>
           <% end %>
         </div>
     <% end %>

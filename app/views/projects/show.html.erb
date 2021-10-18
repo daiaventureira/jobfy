@@ -10,7 +10,7 @@
     <% end %>
 </div>
    <div>Data final de aplicação<%= @projects.deadline%></div>
-    <% if professional_signed_in? && !@project_application.status%> 
+    <% if professional_signed_in? && @project_application.status%> 
       <%= form_with model:[@projects, @project_application] do |f| %>
         <div>
           <%= f.label :introduction, "Introdução" %>
@@ -18,7 +18,7 @@
         </div>
         <div><%=f.submit 'Candidatar-se'%></div> 
       <% end %>
-    <% else %>
+    <% else  %>
       <p>Você já se candidatou! Acompanhe suas aplicações. Em breve terá uma resposta.</p>
     <% end %>
 
