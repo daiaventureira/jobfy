@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'professional requests a project' do 
   it 'successfully' do 
-      professional = Professional.create!(email: 'pro@fessional.com.br', password: '123456')
+      professional = Professional.create!(email: 'pro@fissional.com.br', password: '123456')
 
       user = User.create!(email: 'user@user.com.br', password: '123456')
 

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe 'Professional fiil profile when authenticated' do 
+describe 'Professional fill profile when authenticated' do 
   it "successfully" do 
 
     professional = Professional.create!(email: 'user@user.com.br', password: '123456')

@@ -10,6 +10,4 @@ class Project < ApplicationRecord
             errors.add(:deadline, 'deve ser maior que a data atual')
         end
     end 
-
-
 end

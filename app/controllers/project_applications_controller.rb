@@ -8,13 +8,21 @@ class ProjectApplicationsController < ApplicationController
   
   def create 
     @project_application = current_professional.project_applications.new(project_application_params)
-
-    # @project_application = ProjectApplication.new(project_application_params)
-    # @project_application.professional = current_professional
     @project_application.project = Project.find(params[:project_id])
     @project_application.save
     flash[:notice] = 'Você se candidatou para fazer parte desse projeto com sucesso!'
     redirect_to @project_application
+  end
+
+  def accept 
+    @project_application = ProjectApplication.find(params[:id])
+    @project_application.accepted!
+    redirect_to @project_application.project
+  end
+  def reject 
+    @project_application = ProjectApplication.find(params[:id])
+    @project_application.rejected!
+    redirect_to @project_application.project
   end
 
   private 

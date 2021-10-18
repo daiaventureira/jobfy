@@ -1,4 +1,4 @@
-<% if user_signed_in? && current_user.project%>
+<% if user_signed_in? %>
   <h1>Aplicações para o projeto <%= @project_application.project.title%></h1>
   <dl>
     <dt>Introdução </dt>
@@ -7,10 +7,10 @@
 <% end %>
 
 <% if professional_signed_in? && current_professional.project_applications%>
-
   <h1>Sua Aplicação para o projeto <%= @project_application.project.title%></h1>
   <dl>
     <dt>Introdução: </dt>
     <dd><%= @project_application.introduction%>
   </dl>
 <% end %>
+
