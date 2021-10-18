@@ -58,22 +58,17 @@ No seu browser digite: "localhost:3000" e isso irá mostrar a seguinte página:
 * Active Storage
 
  
-## Tests
+## Testes
 
 
-* This application includes models and controllers tests.
+* Esta aplicação inclui testes.
 
-* Running the models tests:
-
-```bash
-$ rails test:models 
-```
-
-* Running the controllers tests
+* Rodando os testes:
 
 ```bash
-$ rails test:controllers
+$ rspec
 ```
+
 
 
 
