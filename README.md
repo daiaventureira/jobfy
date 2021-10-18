@@ -1,24 +1,74 @@
-# README
+# Jobfy 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Essa aplicação é um app que conecta usuários com projetos e profissionais que desejam partipar, desenvolvida utilizando Ruby on Rails e Active Storage.
+A aplicação tem uma funcionalidade de login. Após logado o usuário pode adicionar proejetos, como título, descrição, habilidades necessárias, data limite para solicitar participação, valor. O profissional após logado tem que obrigatoriamente preencher o perfil antes de ver projetos e se candidatar.
 
-Things you may want to cover:
 
-* Ruby version
+## Requirements
 
-* System dependencies
+* Eu estou assumindo que você tenha ruby 3 instalado na sua máquina
 
-* Configuration
+## Installation
 
-* Database creation
+* primeiro você precisa clonar o repositório. No seu terminal rode o comando:
 
-* Database initialization
+```bash
+$ git clone git@github.com:daiaventureira/jobfy.git
+```
 
-* How to run the test suite
+* Após isso rode os seguintes comando dentro do seu repositório jobfy localmente:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+ $ bundle install
+```
 
-* Deployment instructions
+```bash
+ $ rails db:setup
+```
 
-* ...
+## Usage
+
+
+Para rodar localmente:
+
+```bash
+ $ rails server
+```
+
+* Se você tiver um erro no webpacker:
+
+```bash
+ $ rails webpacker:install
+```
+
+```bash 
+ $ rails server
+``` 
+ 
+No seu browser digite: "localhost:3000" e isso irá mostrar a seguinte página:
+<img width="1145" alt="Screen Shot 2021-10-17 at 10 59 08 PM" src="https://user-images.githubusercontent.com/44145146/137662544-d104d05c-3669-44c7-8654-8298abf690c2.png">
+
+
+## informações
+
+* Ruby version:  ruby 3.0.0p0
+
+* Rails version: Rails 6.1.4.1
+
+* Active Storage
+
+ 
+## Testes
+
+
+* Esta aplicação inclui testes.
+
+* Rodando os testes:
+
+```bash
+$ rspec
+```
+
+
+
+
