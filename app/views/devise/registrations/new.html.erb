@@ -3,26 +3,32 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <%= f.label :email, for:'floatingInput'  %><br />
+    <div class="form-floating mb-3">
+      <div class="col-sm">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:'nome@exemplo.com', class:"form-control" %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <%= f.label :password, for:'floatingInput' %>
+    <div class="form-floating mb-3">
+      <div class="col-sm">
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+      </div>
+    </div>
 
-  <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="form-floating mb-3">
+      <div class="col-sm">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="col-12 mb-3">
+    <%= f.submit "Sign up", class:"btn btn-primary" %>
   </div>
 <% end %>
 

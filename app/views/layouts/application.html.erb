@@ -10,28 +10,70 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-  <% if user_signed_in? %>
-    <p><%= current_user.email %><p>
-    <p><%= link_to 'Ver aplicações', project_applications_path %>
-    <p><%= link_to 'Logout', destroy_user_session_path, method: :delete%>
-    <p><%= link_to 'Adicionar projeto', new_project_path %>
-  <% elsif professional_signed_in? && current_professional.profile %>
-    <p><%= current_professional.email%><p>
-    <p><%= link_to 'Ver aplicações', project_applications_path%></p> 
-     <p><%= link_to 'Veja seu perfil', professional_profile_path(current_professional, current_professional.id) %></p>
-    <p><%= link_to 'Ver projetos disponíveis', projects_path %></p>
-    <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete%></p>
-  <% elsif professional_signed_in? && !current_professional.profile%>
-    <p>You need to complete your profile before see projects</p>
-    <p> <%= link_to 'Crie', professional_path(current_professional) %></p>
-    <p><%= current_professional.email%><p>
-    <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete %></p>
-  <% else %>
-    <p><%= link_to 'Entrar como usuário', new_user_session_path %></p>
-    <p><%= link_to 'Entrar como profissional', new_professional_session_path%>
-  <% end %>
-  <p><%= notice %></p>
-  <p><%= alert %></p>
-    <%= yield %>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <% if user_signed_in? %>
+                  <li class="nav-item">
+                    <%= link_to current_user.email, projects_path, class:"nav-link disabled" %>
+                  </li>
+                  <li class="nav-item">
+                    <p><%= link_to 'Ver aplicações', project_applications_path, class:"nav-link active" %>
+                  </li> 
+                  <li class="nav-item">
+                    <p><%= link_to 'Adicionar projeto', new_project_path, class:"nav-link active" %>
+                  </li>
+                   <li class="nav-item">
+                    <p><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"nav-link active"%>
+                  </li>
+                <% elsif professional_signed_in? && current_professional.profile %>
+                  <li class="nav-item">
+                    <p><%=link_to current_professional.email, professional_profile_path(current_professional, current_professional.id), class:"nav-link disabled" %><p>
+                  </li>
+                  <li class="nav-item">
+                    <p><%= link_to 'Ver aplicações', project_applications_path, class:"nav-link active"%></p> 
+                  </li>
+                  <li class="nav-item">
+                    <p><%= link_to 'Veja seu perfil', professional_profile_path(current_professional, current_professional.id), class:"nav-link active" %></p>
+                  </li>
+                  <li class="nav_item">
+                    <p><%= link_to 'Ver projetos disponíveis', projects_path, class:"nav-link active" %></p>
+                  </li>
+                  <li class="nav-item">
+                    <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete, class:"nav-link active"%></p>
+                  </li>
+                <% elsif professional_signed_in? && !current_professional.profile%>
+                  <p>You need to complete your profile before see projects</p>
+                  <li class="nav-item">
+                    <p> <%= link_to 'Crie', professional_path(current_professional), class:"nav-link active" %></p>
+                  </li>
+                  <li class="nav-item">
+                    <p><%= link_to current_professional.email, current_professional_path, class:"nav-link disabled"%><p>
+                  </li>
+                  <li class="nav-item">
+                    <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete, class:"nav-link " %></p>
+                  </li>
+                <% else %>
+                <li class="nav-item">
+                  <%= link_to 'Entrar como usuário', new_user_session_path, class:"nav-link active" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to 'Entrar como profissional', new_professional_session_path, class:"nav-link active"%>
+                </li>
+                <% end %>
+              </ul>
+              </div>
+              </div>
+            </div>
+        </div>
+      </nav>
+      <div class="container">
+        <%= render partial: "shared/flash"%>
+        <p><%= notice %></p>
+        <p><%= alert %></p>
+        <%= yield %>
+      </div>
   </body>
 </html>
