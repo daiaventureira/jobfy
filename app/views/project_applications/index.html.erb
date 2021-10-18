@@ -17,7 +17,7 @@
 <% if user_signed_in?%>
 <p>Candidaturas</p>
   <% @project_application.each do |p|%>
-    <% if user_signed_in? && current_user.id == p.project_id %>
+    <% if user_signed_in? && current_user.id == p.project.user_id %>
         <div>
           <p>Projeto: <%= p.project.title%></p>
           <p>Introdução <%= p.introduction%></p>
