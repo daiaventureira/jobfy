@@ -17,7 +17,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <% if user_signed_in? %>
                   <li class="nav-item">
-                    <%= link_to current_user.email, projects_path, class:"nav-link disabled" %>
+                    <%= link_to current_user.email, root_path, class:"nav-link active" %>
                   </li>
                   <li class="nav-item">
                     <p><%= link_to 'Ver aplicações', project_applications_path, class:"nav-link active" %>
