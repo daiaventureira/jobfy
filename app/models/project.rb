@@ -1,8 +1,10 @@
 class Project < ApplicationRecord
-
     belongs_to :user
     has_many :project_applications, dependent: :destroy
     validate :deadline_lesser_than_current_day
+
+    enum status: {active: 20, closed: 25}
+
     private
 
     def deadline_lesser_than_current_day

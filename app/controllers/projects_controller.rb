@@ -24,9 +24,19 @@ class ProjectsController < ApplicationController
         end
     end
 
+    def close 
+        @project = Project.find(params[:id])
+        @project.closed!
+        redirect_to root_path
+    end
+
     def professional_has_applied?
         professional_signed_in? && current_professional.projects.where(id: @projects.id).present?
     end
+
+    # def project_is_closed
+    #     professional_signed_in? && current_professional.projects.where(id: @projects.id).present?
+    # end
 
     private
 

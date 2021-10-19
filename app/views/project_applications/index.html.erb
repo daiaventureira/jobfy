@@ -1,15 +1,16 @@
 <% @project_application.each do |p|%>
-   <%if professional_signed_in? && current_professional.id == p.professional_id %>
-      <div>
-        <p>Projeto: <%= p.project.title%></p>
-        <p>Introdução <%= p.introduction%></p>
-      </div>
-  <% end %>
-  <% if professional_signed_in? && current_professional.id == p.professional_id && p.pending? %> 
+   <% if p.project.closed? && p.rejected? || p.project.closed? && p.pending?%>
+   <%elsif professional_signed_in? && current_professional.id == p.professional_id%>
+        <div>
+          <p>Projeto: <%= p.project.title%></p>
+          <p>Introdução <%= p.introduction%></p>
+        </div>     
+    <% end %> 
+  <% if professional_signed_in? && current_professional.id == p.professional_id && p.pending? && p.project.active? %> 
       <p class="alert alert-primary" role="alert">Sua candidatura está pendente</p>
-  <% elsif professional_signed_in? && current_professional.id == p.professional_id  && p.accepted? %>
+  <% elsif professional_signed_in? && current_professional.id == p.professional_id  && p.accepted?  %>
       <p class="alert alert-success" role="alert"> Sua candidatura foi aceita! </p>
-  <%elsif professional_signed_in? && current_professional.id == p.professional_id  && p.rejected? %>
+  <%elsif professional_signed_in? && current_professional.id == p.professional_id  && p.rejected? && p.project.active? %>
       <p class="alert alert-danger" role="alert">Sua candidatura foi recusada mas não desanime! Temos muitos projetos que encaixam no seu perfil</p>    
   <% end %>
 <% end %>

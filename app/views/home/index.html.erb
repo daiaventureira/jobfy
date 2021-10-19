@@ -28,7 +28,12 @@
                                     <% end %>
                                 </p>
                         <p class="card-text">Data limite: <%= p.deadline.strftime("%d/%m/%Y") %></p>
-                        <%= link_to "Encerrar inscrições", "#",class:"btn btn-primary"%>
+                        <% if p.active? %>
+                        <%= link_to "Encerrar inscrições", close_user_project_path(current_user, p.id), method: :post, class:"btn btn-primary" %>
+
+                        <% elsif p.closed?%>
+                            <%= link_to "Encerradas","#", class:"btn btn-success"%>
+                        <% end %>
                         </div>
                     </div>
                 </div>

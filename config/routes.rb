@@ -6,8 +6,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users do 
-    resources :projects, only: %i[show] 
+    resources :projects, only: %i[show] do 
+      post 'close', on: :member
+    end 
   end
+  
   root to: 'home#index'
   
   resources :projects do 
