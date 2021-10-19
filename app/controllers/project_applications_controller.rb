@@ -2,6 +2,7 @@ class ProjectApplicationsController < ApplicationController
   def index 
     @project_application = ProjectApplication.all
   end
+
   def show 
     @project_application = ProjectApplication.find(params[:id])
   end

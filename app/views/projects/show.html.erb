@@ -1,26 +1,27 @@
-<div>Descrição<%= @projects.description%></div>
-<div>Habilidades<%= @projects.skills%></div>
-<div>Preço por hora<%= @projects.price_per_hour%></div>
- <div>
+  <div>Descrição <%= @projects.description%></div>
+  <div>Habilidades <%= @projects.skills%></div>
+  <div>Preço por hora <%= @projects.price_per_hour%></div>
+  <div>
     <dt>Local de atuação:</dt>
-    <% if @projects.remote? %>
+      <% if @projects.remote? %>
         <dd>Remoto</dd>
-    <% else %>
+      <% else %>
         <dd>Presencial</dd>
-    <% end %>
-</div>
-   <div>Data final de aplicação<%= @projects.deadline%></div>
-    <% if professional_signed_in? && @project_application.status%> 
-      <%= form_with model:[@projects, @project_application] do |f| %>
-        <div>
-          <%= f.label :introduction, "Introdução" %>
-          <%= f.text_field :introduction %>
-        </div>
-        <div><%=f.submit 'Candidatar-se'%></div> 
       <% end %>
-    <% elsif professional_signed_in? && !project_application.status  %>
-      <p>Você já se candidatou! Acompanhe suas aplicações. Em breve terá uma resposta.</p>
-    <% end %>
+  </div>
+  
+   <div>Data final de aplicação <%= @projects.deadline%></div>
+        <%= form_with model:[@projects, @project_application] do |f| %>
+              <div>
+                <%= f.label :introduction, "Introdução" %>
+                <%= f.text_field :introduction %>
+              </div>
+              <div><%=f.submit 'Candidatar-se'%></div>
+        <% end %>
+    <%# <% if professional_signed_in? && @projects.project_applications.professional_id == current_professional.id  %> 
+                 <%# <p>Você já se candidatou! Acompanhe suas aplicações. Em breve terá uma resposta.</p> %>
+    <%# <% end %>  
+
 
 
 
