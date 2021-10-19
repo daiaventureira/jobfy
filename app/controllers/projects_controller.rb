@@ -1,7 +1,10 @@
 class ProjectsController < ApplicationController 
+    helper_method :professional_has_applied?
+
     def index 
         @projects = Project.all
     end
+
     def show 
         @projects = Project.find(params[:id])
         @project_application = ProjectApplication.new
@@ -19,6 +22,10 @@ class ProjectsController < ApplicationController
         else
             render :new
         end
+    end
+
+    def professional_has_applied?
+        professional_signed_in? && current_professional.projects.where(id: @projects.id).present?
     end
 
     private

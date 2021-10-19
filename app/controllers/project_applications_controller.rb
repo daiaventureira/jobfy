@@ -5,6 +5,7 @@ class ProjectApplicationsController < ApplicationController
 
   def show 
     @project_application = ProjectApplication.find(params[:id])
+    @project_application_show = ProjectApplication.where(professional_id: current_professional)
   end
   
   def create 
