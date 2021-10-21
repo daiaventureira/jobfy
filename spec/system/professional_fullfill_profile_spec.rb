@@ -23,12 +23,12 @@ describe 'Professional fill profile when authenticated' do
 
     visit root_path
 
-    expect(page).to have_content('Daiane Souza')
-    expect(page).to have_content('Dai')
-    expect(page).to have_content('Olá essa é minha descriçao')
-    expect(page).to have_content('Olá essa é minha formação')
-    expect(page).to have_content(27/04/1997)
-    expect(page).to have_content(/2/)
+    expect(page).to have_content(professional.email)
+    expect(page).to have_link('Ver aplicações')
+    expect(page).to have_link('Ver projetos disponíveis')
+    expect(page).to have_link('Logout')
+    expect(page).to have_content('Bem vinde ao jobfy!')
+    expect(page).to have_content('Conectando desenvolvedores e projetos')
     expect(page).to have_css("img[alt=Foto]")
   end
 

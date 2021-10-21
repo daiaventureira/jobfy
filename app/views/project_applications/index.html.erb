@@ -15,22 +15,37 @@
   <% end %>
 <% end %>
   
-<% if user_signed_in?%>
-<p>Candidaturas</p>
-  <% @project_application.each do |p|%>
-    <% if user_signed_in? && current_user.id == p.project.user_id %>
-        <div>
-          <p>Projeto: <%= p.project.title%></p>
-          <p>Introdução <%= p.introduction%></p>
-          <p>Nome do profissional: <%= p.professional.profile.full_name %></p>
-          <p>Data de nascimento do profissional: <%= p.professional.profile.birth_date %></p>
-          <dt>Status:</dt>
-          <dd><%= p.status%></dd>
-          <% if p.pending?%>
-            <p><%= link_to 'Aceitar', accept_project_application_path(p.id), method: :post%></p>
-            <p><%= link_to 'Recusar', reject_project_application_path(p.id), method: :post%></p>
-          <% end %>
+  <% if user_signed_in?%>
+    <p>Candidaturas</p>
+      <% @project_application.each do |p|%>
+      <div class="row">
+        <% if user_signed_in? && current_user.id == p.project.user_id %>
+          <div class="row-lg-100">
+            <div class="card" >
+              <div class="card-body">
+                <h5 class="card-title"><%= p.project.title%></h5>
+                <dt>Introdução</dt>
+                <h6 clas="card-subtitle"><%= p.introduction%></h6>
+                <dt>Nome do profissional:</dt>
+                <h6 class="card-text"> <%= p.professional.profile.full_name %></h6>
+                <dt>Mande um email para contatar o profissional:</dt>
+                <h6 class="card-text"> <%=mail_to p.professional.email%></h6>
+                <dt>Data de nascimento:</dt>
+                <h6 class="card-text"><%= p.professional.profile.birth_date.strftime("%d/%m/%Y") %></h6>
+                <dt>Status:</dt>
+                <dd><%= p.status%></dd>
+                <% if p.pending?%>
+                  <p><%= link_to 'Aceitar', accept_project_application_path(p.id), method: :post, class: "btn btn-primary" %></p>
+                  <p><%= link_to 'Recusar', reject_project_application_path(p.id), method: :post, class: "btn btn-primary" %></p>
+                <% end %>
+              </div>
+            </div>
+          <div>
+        <% end %>
         </div>
-    <% end %>
+
+      <% end %>
   <% end %>
-<% end %>
+
+
+

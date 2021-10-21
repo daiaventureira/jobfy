@@ -1,14 +1,14 @@
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= f.label :email %><br />
+    <%= f.label :email, 'Email' %><br />
       <div class="form-floating mb-3">
         <div class="col-sm">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"nome@exemplo.com" %>
         </div>
      </div>
  
-    <%= f.label :password %><br />
+    <%= f.label :password, 'Password' %><br />
     <div class="form-floating mb-3">
       <div class="col-sm">
         <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>

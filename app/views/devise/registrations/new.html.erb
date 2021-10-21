@@ -3,14 +3,14 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-    <%= f.label :email, for:'floatingInput'  %><br />
+    <%= f.label :email%><br />
     <div class="form-floating mb-3">
       <div class="col-sm">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:'nome@exemplo.com', class:"form-control" %>
       </div>
     </div>
 
-    <%= f.label :password, for:'floatingInput' %>
+    <%= f.label :password,'password'%>
     <div class="form-floating mb-3">
       <div class="col-sm">
         <% if @minimum_password_length %>
