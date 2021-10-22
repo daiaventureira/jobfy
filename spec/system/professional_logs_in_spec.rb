@@ -8,7 +8,7 @@ describe 'Professional signs up' do
     click_on 'Sign up'
     
     fill_in 'Email', with: 'professional@p.com.br'
-    fill_in 'Password', with: '123456'
+    fill_in 'password', with: '123456'
     fill_in 'Password confirmation', with: '123456'
     
     click_on 'Sign up'
