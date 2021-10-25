@@ -34,10 +34,6 @@ class ProjectsController < ApplicationController
         professional_signed_in? && current_professional.projects.where(id: @projects.id).present?
     end
 
-    # def project_is_closed
-    #     professional_signed_in? && current_professional.projects.where(id: @projects.id).present?
-    # end
-
     private
 
     def project_params 

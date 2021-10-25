@@ -20,7 +20,6 @@ class ProjectApplicationsController < ApplicationController
 
   def edit 
       @project_application = ProjectApplication.find(params[:id])
-      # redirect_to project_applications_path, notice: "Você editou sua proposta!"
   end
 
   def update
@@ -43,13 +42,6 @@ class ProjectApplicationsController < ApplicationController
     @project_application.rejected!
     redirect_to project_applications_path, notice: "Você recusou a proposta!"
   end
-
-  # def is_current_professional_id_and_professioanl_signed_in_the_same?
-    # @project_application = ProjectApplication.find(params[:id])
-  #   if professional_signed_in? && current_professional.id == @project_application.where(params[id]).professional_id
-  #     true 
-  #   end
-  # end
 
   def destroy 
     @project_application = ProjectApplication.find(params[:id])

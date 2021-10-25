@@ -47,9 +47,8 @@ describe "User change status of project aplication" do
 
     login_as professional, scope: :professional
     visit root_path
+    click_on 'Crie' 
 
-    click_on 'Crie'
-    
     fill_in 'Nome completo', with: 'Joao'
     fill_in 'Data de nascimento', with: date
     fill_in 'Descrição', with: 'Olá essa é minha descriçao'
@@ -60,15 +59,11 @@ describe "User change status of project aplication" do
     click_on "Criar"
     click_on "Ver projetos disponíveis"
     click_on "Projeto"
-
     fill_in "Introdução", with: "Ola quero me candidatar"
     click_on "Candidatar-se"
     click_on "Logout"
-
     login_as user, scope: :user
-
     visit root_path
-
     click_on "Ver aplicações"
     click_on "Recusar"
 

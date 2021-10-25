@@ -6,20 +6,16 @@ describe 'User add project' do
         date = 5.days.from_now 
 
         login_as dai, scope: :user 
-
         visit root_path
-
         click_on 'Adicionar projeto'
-
         fill_in 'Título', with: 'Website'
         fill_in 'Descrição', with: 'Procuro desenvolvedores que consigam fazer um simples website de recrutamento'
         fill_in 'Habilidades', with: 'Básico conhecimento em JavaScript, CSS, HTML, profundo conhecimento em Ruby e orientação a objetos'
         fill_in 'Preço por hora', with: '200,00'
         fill_in 'Data limite', with: date
         check 'Remoto'
-
         click_on 'Adicionar'
-
+        
         expect(page).to have_content('Título: Website')
         expect(page).to have_content('Descrição: Procuro desenvolvedores que consigam fazer um simples website de recrutamento')
         expect(page).to have_content('Habilidades: Básico conhecimento em JavaScript, CSS, HTML, profundo conhecimento em Ruby e orientação a objetos')

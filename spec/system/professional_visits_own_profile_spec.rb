@@ -7,19 +7,18 @@ describe 'Professional visits own profile' do
     date = '27/04/1997'
 
     visit root_path
-
     click_on 'Crie'
-    
+
     fill_in 'Nome completo', with: 'Daiane Souza'
     fill_in 'Data de nascimento', with: date
     fill_in 'Descrição', with: 'Olá essa é minha descriçao'
     fill_in 'Formação', with: 'Olá essa é minha formação'
     fill_in 'Experiência em anos', with: '2'
     attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
-
+    
     click_on "Criar"  
+    click_on 'Veja seu perfil' 
 
-    click_on 'Veja seu perfil'    
     expect(page).to have_content('Nome completo')
     expect(page).to have_content('Data de nascimento')
     expect(page).to have_content('Descrição')

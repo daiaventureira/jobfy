@@ -22,13 +22,7 @@ describe 'User sees applications' do
     user = User.create!(email: 'user@user.com.br', password: '123456')
 
     project = Project.create!(title: 'Website', description: 'descricao', skills: 'skills', price_per_hour: 'R$ 90,00', deadline: 2.days.from_now, remote: true, user: user )
-    # foto = attach_fille(io:File.open('/spec/fixtures/picture.jpg'), filename: 'picture.jpg')
-    # path = File.join Rails.root, 'public', 'system', 'users', user.id.to_s, 'style'
-
-    # profile = @profile.create!(full_name: 'oi', avatar: foto)
-
     login_as professional, scope: :professional
-
     date = '27/04/1997'
 
     visit root_path 
