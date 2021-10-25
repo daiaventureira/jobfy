@@ -1,0 +1,7 @@
+<%= form_with model:[@projects, @project_application] do |f| %>
+  <div>
+    <%= f.label :reason, "Justificativa" %>
+    <%= f.text_field :reason %>
+  </div>
+  <div><%=f.submit 'Cancelar'%></div>
+<% end %>

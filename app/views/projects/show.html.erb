@@ -10,9 +10,8 @@
             <dd>Presencial</dd>
           <% end %>
       </div>
-      <div>Data final de aplicação <%= @projects.deadline.strftime("%d/%m/%Y")%></div>
-
-
+        <div>Data final de aplicação <%= @projects.deadline%></div>
+        
       <% if professional_has_applied? %>
         <p>Você já se candidatou! Acompanhe suas aplicações. Em breve terá uma resposta.</p>
       <% else %>

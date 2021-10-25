@@ -1,4 +1,6 @@
 class ProjectApplicationsController < ApplicationController 
+  helper_method :is_current_professional_id_and_professioanl_signed_in_the_same?
+
   def index 
     @project_application = ProjectApplication.all
   end
@@ -16,20 +18,48 @@ class ProjectApplicationsController < ApplicationController
     redirect_to @project_application
   end
 
+  def edit 
+      @project_application = ProjectApplication.find(params[:id])
+      # redirect_to project_applications_path, notice: "Você editou sua proposta!"
+  end
+
+  def update
+    @project_application = ProjectApplication.find(params[:id])
+      if @project_application.update(project_application_params)
+          redirect_to project_applications_path
+      else
+        render :new
+      end
+  end
+
   def accept 
     @project_application = ProjectApplication.find(params[:id])
     @project_application.accepted!
-    redirect_to @project_application.project
+    redirect_to project_applications_path, notice: "Você aceitou a proposta!"
   end
+
   def reject 
     @project_application = ProjectApplication.find(params[:id])
     @project_application.rejected!
-    redirect_to @project_application.project
+    redirect_to project_applications_path, notice: "Você recusou a proposta!"
+  end
+
+  # def is_current_professional_id_and_professioanl_signed_in_the_same?
+    # @project_application = ProjectApplication.find(params[:id])
+  #   if professional_signed_in? && current_professional.id == @project_application.where(params[id]).professional_id
+  #     true 
+  #   end
+  # end
+
+  def destroy 
+    @project_application = ProjectApplication.find(params[:id])
+    @project_application.destroy 
+    redirect_to project_applications_path, notice: "Você cancelou uma proposta!"
   end
 
   private 
 
   def project_application_params 
-    params.require(:project_application).permit(:introduction)
+    params.require(:project_application).permit(:introduction, :reason)
   end
 end 

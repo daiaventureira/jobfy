@@ -3,21 +3,6 @@ require 'rails_helper'
 describe 'User add project' do
     it 'successfully' do 
         dai = User.create!(email: 'dai@ane.com.br', password: '123456')
-
-        login_as dai, scope: :user 
-        visit root_path
-        click_on 'Adicionar projeto'
-
-        expect(page).to have_content('Título')
-        expect(page).to have_content('Descrição')
-        expect(page).to have_content('Preço por hora')
-        expect(page).to have_content('Data limite')
-        expect(page).to have_content('Remoto')
-    end
-
-    it 'add project' do 
-
-        dai = User.create!(email: 'dai@ane.com.br', password: '123456')
         date = 5.days.from_now 
 
         login_as dai, scope: :user 
@@ -41,6 +26,21 @@ describe 'User add project' do
         expect(page).to have_content("Preço por hora: R$ 200,00")
         expect(page).to have_content("Data limite: #{date.strftime("%d/%m/%Y")}")
         expect(page).to have_content('Remoto')
+    end
+
+    it 'goes to add project page' do
+        
+        dai = User.create!(email: 'dai@ane.com.br', password: '123456')
+
+        login_as dai, scope: :user 
+        visit root_path
+        click_on 'Adicionar projeto'
+
+        expect(page).to have_content('Título')
+        expect(page).to have_content('Descrição')
+        expect(page).to have_content('Preço por hora')
+        expect(page).to have_content('Data limite')
+        expect(page).to have_content('Remoto') 
     end
 
     it 'and should not be valid' do 

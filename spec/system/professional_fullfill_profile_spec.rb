@@ -53,6 +53,7 @@ describe 'Professional fill profile when authenticated' do
     click_on 'Crie'
     
     fill_in 'Nome completo', with: 'Joao'
+    fill_in 'Nome social', with: 'Jo'
     fill_in 'Data de nascimento', with: date
     fill_in 'Descrição', with: 'Olá essa é minha descriçao'
     fill_in 'Formação', with: 'Olá essa é minha formação'
@@ -71,7 +72,7 @@ describe 'Professional fill profile when authenticated' do
     expect(page).to have_content('Jobfy')
     expect(page).to have_content('Bem vinde ao jobfy')
     expect(page).to have_content('Conectando desenvolvedores e projetos')
-    expect(page).to have_content('Olá Joao :)')
+    expect(page).to have_content('Olá Jo :)')
   end
 end
 

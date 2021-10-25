@@ -3,7 +3,13 @@
 <% end %> 
 <h1 class="mb-3 mt-3">Jobfy<h1>
  <% if professional_signed_in? && current_professional.profile %>
-        <h4 class="font-monospace mt-3 mb-3 lh-lg">Olá <%= current_professional.profile.full_name%> :)</h4>    
+        <h4 class="font-monospace mt-3 mb-3 lh-lg">Olá 
+            <% if current_professional.profile.social_name.length > 0%>
+                <%= current_professional.profile.social_name%>
+            <% else %>
+                <%= current_professional.profile.full_name%>
+            <% end %> :)
+        </h4>    
  <% end %> 
 
 <h2 class="font-monospace mt-3 mb-3 lh-lg">Bem vinde ao jobfy!</h2>

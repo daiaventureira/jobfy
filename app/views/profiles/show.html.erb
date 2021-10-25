@@ -1,17 +1,15 @@
 <% if professional_signed_in? %>
-    <p><%=image_tag current_professional.profile.avatar, class:"float-end w-25 p-3 img-thumbnail mb-3", alt:'Foto'%></p>
+  <p><%=image_tag current_professional.profile.avatar, class:"float-end w-25 p-3 img-thumbnail mb-3", alt:'Foto'%></p>
     <%= form_with model: [@professional, @profile] do |f| %>
-        <%= render partial: "shared/flash"%>
-        <%= render "shared/form_errors", form: f %>
+      <%= render partial: "shared/flash"%>
+      <%= render "shared/form_errors", form: f %>
       <div class="row mb-3">
-
         <div>
           <%= f.label :full_name, 'Nome completo', class:"col-sm-2 col-form-label mt-3" %>
           <div class="col-sm-10">
             <%= f.text_field :full_name, class:"form-control" %>
           </div>
         </div>
-
         <div>
           <%= f.label :social_name, 'Nome social', class:"col-sm-2 col-form-label mt-3" %>
           <%= f.text_field :social_name, class:"form-control"%>
@@ -36,9 +34,8 @@
           <%= f.label :avatar, 'Foto', class:"col-sm-2 col-form-label mb-3 mt-3" %>
           <%= f.file_field :avatar %>
         </div>
-
       </div>
     <%= f.submit 'Atualizar', class:"btn btn-primary" %>
-    <% end %>
   <% end %>
+<% end %>
 

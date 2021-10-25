@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   
   resources :projects do 
-    resources :project_applications, only: %i[create show], shallow: true do 
+    resources :project_applications, only: %i[create show edit], shallow: true do 
       post 'accept', on: :member
       post 'reject', on: :member
     end
