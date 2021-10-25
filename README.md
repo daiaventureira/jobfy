@@ -1,8 +1,7 @@
 # Jobfy 
 
-Essa aplicação é um app que conecta usuários com projetos e profissionais que desejam partipar, desenvolvida utilizando Ruby on Rails e Active Storage.
-A aplicação tem uma funcionalidade de login. Após logado o usuário pode adicionar proejetos, como título, descrição, habilidades necessárias, data limite para solicitar participação, valor. O profissional após logado tem que obrigatoriamente preencher o perfil antes de ver projetos e se candidatar.
-
+Essa aplicação é um app que conecta usuários com projetos e profissionais que desejam partipar. Desenvolvida utilizando Ruby on Rails e Active Storage.
+A aplicação tem uma funcionalidade de login. Após logado o usuário pode adicionar proejetos, como título, descrição, habilidades necessárias, data limite para solicitar participação e valor. O profissional após logado tem que obrigatoriamente preencher o perfil antes de ver projetos e se candidatar. O usuário (dono do projeto) pode aceitar ou recusar aplicações feitas por profissionais. Os profissionais podem desistir de uma aplicação se ela estiver pendente ou se o usuário aceitou em até 3 dias.
 
 ## Requerimentos
 
@@ -48,6 +47,7 @@ Para rodar localmente:
 No seu browser digite: "localhost:3000" e isso irá mostrar a seguinte página:
 
 <img width="1145" alt="Screen Shot 2021-10-18 at 6 33 12 PM" src="https://user-images.githubusercontent.com/44145146/137815493-e841e396-ac48-4427-9ee4-25e13350bebc.png">
+
 
 
 
