@@ -23,7 +23,8 @@ class ProfilesController < ApplicationController
       if @profile.update(profile_params)
         redirect_to root_path
       else
-        render :new
+        flash[:alert] = "Verifique se os campos atualizados estão devidamente preenchidos"
+        render :show
       end
   end
 

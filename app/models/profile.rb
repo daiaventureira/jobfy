@@ -1,6 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :professional
-  validates :full_name, :birth_date, :description, :educational_background, presence:{ message: "Todos os campos são obrigatórios menos nome social!" }
+  validates :full_name, :birth_date, :description, :educational_background, :experience, presence:{ message: "Todos os campos são obrigatórios menos nome social!" }
   validate :professional_should_be_at_least_eighteen_years
 
   private

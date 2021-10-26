@@ -64,6 +64,7 @@ describe 'Professional signs up' do
     
     expect(page).to have_content('Password is too short (minimum is 6 characters)')
   end
+  
   it "professional gets error if not have an account" do 
     visit root_path
     
