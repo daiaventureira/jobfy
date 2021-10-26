@@ -5,22 +5,20 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  resources :users do 
-    resources :projects, only: %i[show] do 
-      post 'close', on: :member
-    end 
-  end
+  resources :projects, only: %i[close] do 
+    post 'close', on: :member
+  end 
   
   root to: 'home#index'
   
-  resources :projects do 
+  resources :projects, only: %i[create new show index ] do 
     resources :project_applications, only: %i[create show edit], shallow: true do 
       post 'accept', on: :member
       post 'reject', on: :member
     end
   end
-  resources :project_applications
+  resources :project_applications, only: %i[ index destroy update ]
 
-  resources :profiles
+  resources :profiles, only: %i[update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

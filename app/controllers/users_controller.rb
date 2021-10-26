@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!
  
-  def show 
-    @users = User.find(params[:id])
-    @projects = Project.all
-  end
+  # def show 
+    # @users = User.find(params[:id])
+    # @projects = Project.all
+  # end
 end
