@@ -1,6 +1,11 @@
 class ProfilesController < ApplicationController  
   before_action :authenticate_professional!, only: %i[show create update]
- 
+  helper_method :is_current_professional_profile?
+
+  def index
+    @profile = Profile.all
+  end
+
   def show
     @profile = Profile.find(params[:id])
   end

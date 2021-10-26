@@ -1,0 +1,10 @@
+<li class="nav-item">
+  <p><%= link_to current_professional.email, current_professional, class:"nav-link disabled"%>
+    <p>
+    </li>
+    <li class="nav-item">
+      <p> <%= link_to 'Crie', professional_path(current_professional), class:"nav-link active" %></p>
+    </li>
+    <li class="nav-item">
+      <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete, class:"nav-link " %></p>
+    </li>

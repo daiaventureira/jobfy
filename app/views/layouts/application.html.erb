@@ -15,62 +15,23 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <% if user_signed_in? %>
-                <li class="nav-item">
-                  <%= link_to current_user.email, root_path, class:"nav-link active" %>
-                </li>
-                <li class="nav-item">
-                  <p><%= link_to 'Ver aplicações', project_applications_path, class:"nav-link active" %>
-                  </li>
-                  <li class="nav-item">
-                    <p><%= link_to 'Adicionar projeto', new_project_path, class:"nav-link active" %>
-                    </li>
-                    <li class="nav-item">
-                      <p><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"nav-link active"%>
-                      </li>
-                    <% elsif professional_signed_in? && current_professional.profile %>
-                      <li class="nav-item">
-                        <p><%=link_to current_professional.email, professional_profile_path(:id,current_professional.id), class:"nav-link disabled"%></p>
-                      </li>
-                      <li class="nav-item">
-                        <p><%= link_to 'Ver aplicações', project_applications_path, class:"nav-link active"%></p>
-                      </li>
-                      <li class="nav-item">
-                        <p><%= link_to 'Veja seu perfil', professional_profile_path(current_professional.id, current_professional.profile.id), class:"nav-link active" %></p>
-                      </li>
-                      <li class="nav_item">
-                        <p><%= link_to 'Ver projetos disponíveis', projects_path, class:"nav-link active" %></p>
-                      </li>
-                      <li class="nav-item">
-                        <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete, class:"nav-link active"%></p>
-                      </li>
-                    <% elsif professional_signed_in? && !current_professional.profile%>
-                      <li class="nav-item">
-                        <p><%= link_to current_professional.email, current_professional, class:"nav-link disabled"%>
-                          <p>
-                          </li>
-                          <li class="nav-item">
-                            <p> <%= link_to 'Crie', professional_path(current_professional), class:"nav-link active" %></p>
-                          </li>
-                          <li class="nav-item">
-                            <p><%= link_to 'Logout', destroy_professional_session_path, method: :delete, class:"nav-link " %></p>
-                          </li>
-                        <% else %>
-                          <li class="nav-item">
-                            <%= link_to 'Entrar como usuário', new_user_session_path, class:"nav-link active" %>
-                          </li>
-                          <li class="nav-item">
-                            <%= link_to 'Entrar como profissional', new_professional_session_path, class:"nav-link active"%>
-                          </li>
-                        <% end %>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </nav>
-            <div class="container">
-              <%= render partial: "shared/flash"%>
-              <%= yield %>
-            </div>
-          </body>
-        </html>
+                <%= render partial: "shared/user_is_signed_in" %>
+              <% elsif is_current_professional_profile? %>
+                <%= render partial: "shared/is_current_professional_profile" %>
+              <% elsif professional_signed_in? && !is_current_professional_profile?%>
+                <%= render partial: "shared/is_not_current_professional_profile" %>
+              <% else %>
+                <%= render partial: "shared/no_one_is_authenticated" %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <%= render partial: "shared/flash"%>
+    <%= yield %>
+  </div>
+</body>
+</html>

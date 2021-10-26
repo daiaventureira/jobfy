@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-10-26T17:42:27-04:00">2021-10-26T17:42:27-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-10-26T18:48:34-04:00">2021-10-26T18:48:34-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.64%
+  99.52%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.46
+         1.65
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>835</b> relevant lines,
-    <span class="green"><b>832</b> lines covered</span> and
-    <span class="red"><b>3</b> lines missed. </span>
+    <b>841</b> relevant lines,
+    <span class="green"><b>837</b> lines covered</span> and
+    <span class="red"><b>4</b> lines missed. </span>
     (<span class="green">
-  99.64%
+  99.52%
 </span>
 )
   </div>
@@ -73,11 +73,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#39eb49e427dbc945e6717d7e1b239b1b113f2ae5" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">4</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">41.75</td>
             
           </tr>
         
@@ -105,12 +105,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#23ea990d9fdf0f7d3fefbd7c471e93875de2604d" class="src_link" title="app/controllers/profiles_controller.rb">app/controllers/profiles_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">32</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">4.89</td>
+            <td class="green strong cell--number t-file__coverage">95.24 %</td>
+            <td class="cell--number">37</td>
+            <td class="cell--number">21</td>
+            <td class="cell--number">20</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">4.29</td>
             
           </tr>
         
@@ -469,7 +469,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#99b40fc75578b8f899df78cf2dc0107d0cec5387" class="src_link" title="spec/system/professional_requests_a_project_spec.rb">spec/system/professional_requests_a_project_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">229</td>
+            <td class="cell--number">227</td>
             <td class="cell--number">156</td>
             <td class="cell--number">156</td>
             <td class="cell--number">0</td>
@@ -585,8 +585,8 @@
     
 
     <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
+      <b>4</b> relevant lines.
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -609,7 +609,62 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="2">
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  helper_method :is_current_professional_profile?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def is_current_professional_profile?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="164" data-linenumber="5">
+            <span class="hits">164</span>
+            
+
+            
+
+            <code class="ruby">     professional_signed_in? &amp;&amp; current_professional.profile.present?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
             
             
 
@@ -834,7 +889,7 @@
     <h3>app/controllers/profiles_controller.rb</h3>
     <h4>
       <span class="green">
-  100.0%
+  95.24%
 </span>
 
       lines covered
@@ -843,9 +898,9 @@
     
 
     <div class="t-line-summary">
-      <b>18</b> relevant lines.
-      <span class="green"><b>18</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>21</b> relevant lines.
+      <span class="green"><b>20</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
 
     
@@ -878,46 +933,46 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="3">
-            
-            
-
-            
-
-            <code class="ruby"> </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
+          <li class="covered" data-hits="1" data-linenumber="3">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def show</code>
+            <code class="ruby">  helper_method :is_current_professional_profile?</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="5">
-            <span class="hits">3</span>
+          <li class="never" data-hits="" data-linenumber="4">
+            
             
 
             
 
-            <code class="ruby">    @profile = Profile.find(params[:id])</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def index</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="6">
             
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    @profile = Profile.all</code>
           </li>
         </div>
       
@@ -928,12 +983,67 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def show</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="10">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    @profile = Profile.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
             <span class="hits">1</span>
             
 
@@ -944,7 +1054,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="14" data-linenumber="9">
+          <li class="covered" data-hits="14" data-linenumber="14">
             <span class="hits">14</span>
             
 
@@ -955,7 +1065,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="14" data-linenumber="10">
+          <li class="covered" data-hits="14" data-linenumber="15">
             <span class="hits">14</span>
             
 
@@ -966,7 +1076,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="14" data-linenumber="11">
+          <li class="covered" data-hits="14" data-linenumber="16">
             <span class="hits">14</span>
             
 
@@ -977,7 +1087,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="12">
+          <li class="covered" data-hits="13" data-linenumber="17">
             <span class="hits">13</span>
             
 
@@ -988,7 +1098,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
@@ -999,7 +1109,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
+          <li class="covered" data-hits="1" data-linenumber="19">
             <span class="hits">1</span>
             
 
@@ -1010,7 +1120,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
@@ -1021,68 +1131,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="never" data-hits="" data-linenumber="21">
             
             
 
             
 
             <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="18">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def update</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="19">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    @profile = Profile.find(params[:id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="20">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">      if @profile.update(profile_params)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="21">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        redirect_to root_path</code>
           </li>
         </div>
       
@@ -1093,7 +1148,7 @@
 
             
 
-            <code class="ruby">      else</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1104,12 +1159,67 @@
 
             
 
+            <code class="ruby">  def update</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="24">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @profile = Profile.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="25">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      if @profile.update(profile_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        redirect_to root_path</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby">      else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="28">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">        render :show</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -1120,68 +1230,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="30">
             
             
 
             
 
             <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="26">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="27">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  private </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="28">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="29">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def profile_params </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="16" data-linenumber="30">
-            <span class="hits">16</span>
-            
-
-            
-
-            <code class="ruby">    params.require(:profile).permit(:full_name, :social_name, :birth_date, :educational_background, :description, :experience )</code>
           </li>
         </div>
       
@@ -1192,12 +1247,67 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="32">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="34">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def profile_params </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="16" data-linenumber="35">
+            <span class="hits">16</span>
+            
+
+            
+
+            <code class="ruby">    params.require(:profile).permit(:full_name, :social_name, :birth_date, :educational_background, :description, :experience )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="32">
+          <li class="never" data-hits="" data-linenumber="37">
             
             
 
@@ -9830,7 +9940,7 @@
 
             
 
-            <code class="ruby">    resources :profiles, only: %i[create show]</code>
+            <code class="ruby">    resources :profiles, only: %i[create show index]</code>
           </li>
         </div>
       
@@ -10028,7 +10138,7 @@
 
             
 
-            <code class="ruby">  resources :profiles, only: %i[update]</code>
+            <code class="ruby">  resources :profiles, only: %i[update index]</code>
           </li>
         </div>
       
@@ -13957,13 +14067,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">      user = User.create!(email: &#39;user@user.com.br&#39;, password: &#39;123456&#39;)</code>
           </li>
         </div>
       
@@ -13974,7 +14084,7 @@
 
             
 
-            <code class="ruby">      user = User.create!(email: &#39;user@user.com.br&#39;, password: &#39;123456&#39;)</code>
+            <code class="ruby">      project = Project.create!(title: &#39;Website&#39;, description: &#39;descricao&#39;, skills: &#39;skills&#39;, price_per_hour: &#39;R$ 90,00&#39;, deadline: 2.days.from_now, remote: true, user: user )</code>
           </li>
         </div>
       
@@ -13996,7 +14106,7 @@
 
             
 
-            <code class="ruby">      project = Project.create!(title: &#39;Website&#39;, description: &#39;descricao&#39;, skills: &#39;skills&#39;, price_per_hour: &#39;R$ 90,00&#39;, deadline: 2.days.from_now, remote: true, user: user )</code>
+            <code class="ruby">      login_as professional, scope: :professional</code>
           </li>
         </div>
       
@@ -14018,7 +14128,7 @@
 
             
 
-            <code class="ruby">      login_as professional, scope: :professional</code>
+            <code class="ruby">      date = &#39;27/04/1997&#39;</code>
           </li>
         </div>
       
@@ -14040,34 +14150,12 @@
 
             
 
-            <code class="ruby">      date = &#39;27/04/1997&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="14">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">      visit root_path </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
+          <li class="covered" data-hits="1" data-linenumber="14">
             <span class="hits">1</span>
             
 
@@ -14078,7 +14166,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="never" data-hits="" data-linenumber="15">
             
             
 
@@ -14089,7 +14177,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="18">
+          <li class="covered" data-hits="1" data-linenumber="16">
             <span class="hits">1</span>
             
 
@@ -14100,7 +14188,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
+          <li class="covered" data-hits="1" data-linenumber="17">
             <span class="hits">1</span>
             
 
@@ -14111,7 +14199,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="20">
+          <li class="covered" data-hits="1" data-linenumber="18">
             <span class="hits">1</span>
             
 
@@ -14122,7 +14210,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="21">
+          <li class="covered" data-hits="1" data-linenumber="19">
             <span class="hits">1</span>
             
 
@@ -14133,7 +14221,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
+          <li class="covered" data-hits="1" data-linenumber="20">
             <span class="hits">1</span>
             
 
@@ -14144,13 +14232,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
+          <li class="covered" data-hits="1" data-linenumber="21">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">      fill_in &#39;Experiência em anos&#39;, with: &#39;2&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      click_on &quot;Criar&quot;</code>
           </li>
         </div>
       
@@ -14172,34 +14282,12 @@
 
             
 
-            <code class="ruby">      click_on &quot;Criar&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="26">
-            
-            
-
-            
-
-            <code class="ruby">  </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="27">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">      visit root_path</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="28">
+          <li class="covered" data-hits="1" data-linenumber="26">
             <span class="hits">1</span>
             
 
@@ -14210,13 +14298,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="29">
+          <li class="covered" data-hits="1" data-linenumber="27">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">      click_on &quot;Website&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="29">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      fill_in &#39;Introdução&#39;, with: &#39;Olá eu quero participar do seu projeto&#39;</code>
           </li>
         </div>
       
@@ -14238,7 +14348,7 @@
 
             
 
-            <code class="ruby">      fill_in &#39;Introdução&#39;, with: &#39;Olá eu quero participar do seu projeto&#39;</code>
+            <code class="ruby">      click_on &#39;Candidatar-se&#39;</code>
           </li>
         </div>
       
@@ -14260,18 +14370,18 @@
 
             
 
-            <code class="ruby">      click_on &#39;Candidatar-se&#39;</code>
+            <code class="ruby">      expect(page).to have_content(&#39;Você se candidatou para fazer parte desse projeto com sucesso!&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="34">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="34">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">      expect(page).to have_content(&#39;Olá eu quero participar do seu projeto&#39;)</code>
           </li>
         </div>
       
@@ -14282,7 +14392,7 @@
 
             
 
-            <code class="ruby">      expect(page).to have_content(&#39;Você se candidatou para fazer parte desse projeto com sucesso!&#39;)</code>
+            <code class="ruby">      expect(page).to have_content(&#39;Sua Aplicação para o projeto Website&#39;)</code>
           </li>
         </div>
       
@@ -14293,7 +14403,7 @@
 
             
 
-            <code class="ruby">      expect(page).to have_content(&#39;Olá eu quero participar do seu projeto&#39;)</code>
+            <code class="ruby">      expect(page).to have_content(&#39;Introdução&#39;)</code>
           </li>
         </div>
       
@@ -14304,7 +14414,7 @@
 
             
 
-            <code class="ruby">      expect(page).to have_content(&#39;Sua Aplicação para o projeto Website&#39;)</code>
+            <code class="ruby">      expect(page).to have_content(&#39;Olá eu quero participar do seu projeto&#39;)</code>
           </li>
         </div>
       
@@ -14315,34 +14425,12 @@
 
             
 
-            <code class="ruby">      expect(page).to have_content(&#39;Introdução&#39;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="39">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(page).to have_content(&#39;Olá eu quero participar do seu projeto&#39;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="40">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">      expect(page).to_not have_link(&quot;Candidatar-se&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="41">
+          <li class="never" data-hits="" data-linenumber="39">
             
             
 
@@ -14353,7 +14441,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="42">
+          <li class="never" data-hits="" data-linenumber="40">
             
             
 
@@ -14364,7 +14452,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="43">
+          <li class="covered" data-hits="1" data-linenumber="41">
             <span class="hits">1</span>
             
 
@@ -14375,13 +14463,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="44">
+          <li class="covered" data-hits="1" data-linenumber="42">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">      professional = Professional.create!(email: &#39;pro@fissional.com.br&#39;, password: &#39;123456&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="44">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      user = User.create!(email: &#39;user@user.com.br&#39;, password: &#39;123456&#39;)</code>
           </li>
         </div>
       
@@ -14403,7 +14513,7 @@
 
             
 
-            <code class="ruby">      user = User.create!(email: &#39;user@user.com.br&#39;, password: &#39;123456&#39;)</code>
+            <code class="ruby">      project = Project.create!(title: &#39;Website&#39;, description: &#39;descricao&#39;, skills: &#39;skills&#39;, price_per_hour: &#39;R$ 90,00&#39;, deadline: 2.days.from_now, remote: true, user: user )</code>
           </li>
         </div>
       
@@ -14425,7 +14535,7 @@
 
             
 
-            <code class="ruby">      project = Project.create!(title: &#39;Website&#39;, description: &#39;descricao&#39;, skills: &#39;skills&#39;, price_per_hour: &#39;R$ 90,00&#39;, deadline: 2.days.from_now, remote: true, user: user )</code>
+            <code class="ruby">      login_as professional, scope: :professional</code>
           </li>
         </div>
       
@@ -14447,7 +14557,7 @@
 
             
 
-            <code class="ruby">      login_as professional, scope: :professional</code>
+            <code class="ruby">      date = &#39;27/04/1997&#39;</code>
           </li>
         </div>
       
@@ -14469,34 +14579,12 @@
 
             
 
-            <code class="ruby">      date = &#39;27/04/1997&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="53">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="54">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">      visit root_path </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="55">
+          <li class="covered" data-hits="1" data-linenumber="53">
             <span class="hits">1</span>
             
 
@@ -14507,7 +14595,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="56">
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
@@ -14518,7 +14606,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="57">
+          <li class="covered" data-hits="1" data-linenumber="55">
             <span class="hits">1</span>
             
 
@@ -14529,7 +14617,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="58">
+          <li class="covered" data-hits="1" data-linenumber="56">
             <span class="hits">1</span>
             
 
@@ -14540,7 +14628,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="59">
+          <li class="covered" data-hits="1" data-linenumber="57">
             <span class="hits">1</span>
             
 
@@ -14551,7 +14639,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="60">
+          <li class="covered" data-hits="1" data-linenumber="58">
             <span class="hits">1</span>
             
 
@@ -14562,7 +14650,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="61">
+          <li class="covered" data-hits="1" data-linenumber="59">
             <span class="hits">1</span>
             
 
@@ -14573,13 +14661,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="62">
+          <li class="covered" data-hits="1" data-linenumber="60">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">      fill_in &#39;Experiência em anos&#39;, with: &#39;2&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="61">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="62">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      click_on &quot;Criar&quot;</code>
           </li>
         </div>
       
@@ -14601,34 +14711,12 @@
 
             
 
-            <code class="ruby">      click_on &quot;Criar&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="65">
-            
-            
-
-            
-
-            <code class="ruby">  </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="66">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">      visit root_path</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="67">
+          <li class="covered" data-hits="1" data-linenumber="65">
             <span class="hits">1</span>
             
 
@@ -14639,7 +14727,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="68">
+          <li class="covered" data-hits="1" data-linenumber="66">
             <span class="hits">1</span>
             
 
@@ -14650,7 +14738,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="69">
+          <li class="covered" data-hits="1" data-linenumber="67">
             <span class="hits">1</span>
             
 
@@ -14661,7 +14749,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="70">
+          <li class="never" data-hits="" data-linenumber="68">
             
             
 
@@ -14672,7 +14760,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="71">
+          <li class="covered" data-hits="1" data-linenumber="69">
             <span class="hits">1</span>
             
 
@@ -14683,7 +14771,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="72">
+          <li class="never" data-hits="" data-linenumber="70">
             
             
 
@@ -14694,7 +14782,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="73">
+          <li class="never" data-hits="" data-linenumber="71">
             
             
 
@@ -14705,7 +14793,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="74">
+          <li class="covered" data-hits="1" data-linenumber="72">
             <span class="hits">1</span>
             
 
@@ -14716,13 +14804,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="75">
+          <li class="covered" data-hits="1" data-linenumber="73">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">      professional = Professional.create!(email: &#39;pro@fissional.com.br&#39;, password: &#39;123456&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="74">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="75">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      user = User.create!(email: &#39;user@user.com.br&#39;, password: &#39;123456&#39;)</code>
           </li>
         </div>
       
@@ -14744,7 +14854,7 @@
 
             
 
-            <code class="ruby">      user = User.create!(email: &#39;user@user.com.br&#39;, password: &#39;123456&#39;)</code>
+            <code class="ruby">      project = Project.create!(title: &#39;Website&#39;, description: &#39;descricao&#39;, skills: &#39;skills&#39;, price_per_hour: &#39;R$ 90,00&#39;, deadline: 2.days.from_now, remote: true, user: user )</code>
           </li>
         </div>
       
@@ -14766,7 +14876,7 @@
 
             
 
-            <code class="ruby">      project = Project.create!(title: &#39;Website&#39;, description: &#39;descricao&#39;, skills: &#39;skills&#39;, price_per_hour: &#39;R$ 90,00&#39;, deadline: 2.days.from_now, remote: true, user: user )</code>
+            <code class="ruby">      login_as professional, scope: :professional</code>
           </li>
         </div>
       
@@ -14788,7 +14898,7 @@
 
             
 
-            <code class="ruby">      login_as professional, scope: :professional</code>
+            <code class="ruby">      date = &#39;27/04/1997&#39;</code>
           </li>
         </div>
       
@@ -14810,34 +14920,12 @@
 
             
 
-            <code class="ruby">      date = &#39;27/04/1997&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="84">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="85">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">      visit root_path </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="86">
+          <li class="covered" data-hits="1" data-linenumber="84">
             <span class="hits">1</span>
             
 
@@ -14848,7 +14936,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="87">
+          <li class="never" data-hits="" data-linenumber="85">
             
             
 
@@ -14859,7 +14947,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="88">
+          <li class="covered" data-hits="1" data-linenumber="86">
             <span class="hits">1</span>
             
 
@@ -14870,7 +14958,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="89">
+          <li class="covered" data-hits="1" data-linenumber="87">
             <span class="hits">1</span>
             
 
@@ -14881,7 +14969,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="90">
+          <li class="covered" data-hits="1" data-linenumber="88">
             <span class="hits">1</span>
             
 
@@ -14892,7 +14980,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="91">
+          <li class="covered" data-hits="1" data-linenumber="89">
             <span class="hits">1</span>
             
 
@@ -14903,7 +14991,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="92">
+          <li class="covered" data-hits="1" data-linenumber="90">
             <span class="hits">1</span>
             
 
@@ -14914,7 +15002,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="93">
+          <li class="covered" data-hits="1" data-linenumber="91">
             <span class="hits">1</span>
             
 
@@ -14925,7 +15013,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="94">
+          <li class="never" data-hits="" data-linenumber="92">
             
             
 
@@ -14936,7 +15024,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="95">
+          <li class="covered" data-hits="1" data-linenumber="93">
             <span class="hits">1</span>
             
 
@@ -14947,7 +15035,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="96">
+          <li class="covered" data-hits="1" data-linenumber="94">
             <span class="hits">1</span>
             
 
@@ -14958,7 +15046,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="97">
+          <li class="covered" data-hits="1" data-linenumber="95">
             <span class="hits">1</span>
             
 
@@ -14969,7 +15057,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="98">
+          <li class="covered" data-hits="1" data-linenumber="96">
             <span class="hits">1</span>
             
 
@@ -14980,7 +15068,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="99">
+          <li class="covered" data-hits="1" data-linenumber="97">
             <span class="hits">1</span>
             
 
@@ -14991,7 +15079,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="100">
+          <li class="covered" data-hits="1" data-linenumber="98">
             <span class="hits">1</span>
             
 
@@ -15002,7 +15090,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="101">
+          <li class="covered" data-hits="1" data-linenumber="99">
             <span class="hits">1</span>
             
 
@@ -15013,7 +15101,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="102">
+          <li class="never" data-hits="" data-linenumber="100">
             
             
 
@@ -15024,7 +15112,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="103">
+          <li class="covered" data-hits="1" data-linenumber="101">
             <span class="hits">1</span>
             
 
@@ -15035,7 +15123,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="104">
+          <li class="never" data-hits="" data-linenumber="102">
             
             
 
@@ -15046,7 +15134,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="105">
+          <li class="never" data-hits="" data-linenumber="103">
             
             
 
@@ -15057,7 +15145,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="106">
+          <li class="covered" data-hits="1" data-linenumber="104">
             <span class="hits">1</span>
             
 
@@ -15068,13 +15156,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="107">
+          <li class="covered" data-hits="1" data-linenumber="105">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">      professional = Professional.create!(email: &#39;pro@fissional.com.br&#39;, password: &#39;123456&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="106">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="107">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      user = User.create!(email: &#39;user@user.com.br&#39;, password: &#39;123456&#39;)</code>
           </li>
         </div>
       
@@ -15096,7 +15206,7 @@
 
             
 
-            <code class="ruby">      user = User.create!(email: &#39;user@user.com.br&#39;, password: &#39;123456&#39;)</code>
+            <code class="ruby">      project = Project.create!(title: &#39;Website&#39;, description: &#39;descricao&#39;, skills: &#39;skills&#39;, price_per_hour: &#39;R$ 90,00&#39;, deadline: 2.days.from_now, remote: true, user: user )</code>
           </li>
         </div>
       
@@ -15118,7 +15228,7 @@
 
             
 
-            <code class="ruby">      project = Project.create!(title: &#39;Website&#39;, description: &#39;descricao&#39;, skills: &#39;skills&#39;, price_per_hour: &#39;R$ 90,00&#39;, deadline: 2.days.from_now, remote: true, user: user )</code>
+            <code class="ruby">      login_as professional, scope: :professional</code>
           </li>
         </div>
       
@@ -15140,7 +15250,7 @@
 
             
 
-            <code class="ruby">      login_as professional, scope: :professional</code>
+            <code class="ruby">      date = &#39;27/04/1997&#39;</code>
           </li>
         </div>
       
@@ -15162,34 +15272,12 @@
 
             
 
-            <code class="ruby">      date = &#39;27/04/1997&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="116">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="117">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">      visit root_path </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="118">
+          <li class="covered" data-hits="1" data-linenumber="116">
             <span class="hits">1</span>
             
 
@@ -15200,7 +15288,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="119">
+          <li class="never" data-hits="" data-linenumber="117">
             
             
 
@@ -15211,7 +15299,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="120">
+          <li class="covered" data-hits="1" data-linenumber="118">
             <span class="hits">1</span>
             
 
@@ -15222,7 +15310,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="121">
+          <li class="covered" data-hits="1" data-linenumber="119">
             <span class="hits">1</span>
             
 
@@ -15233,7 +15321,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="122">
+          <li class="covered" data-hits="1" data-linenumber="120">
             <span class="hits">1</span>
             
 
@@ -15244,7 +15332,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="123">
+          <li class="covered" data-hits="1" data-linenumber="121">
             <span class="hits">1</span>
             
 
@@ -15255,7 +15343,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="124">
+          <li class="covered" data-hits="1" data-linenumber="122">
             <span class="hits">1</span>
             
 
@@ -15266,7 +15354,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="125">
+          <li class="covered" data-hits="1" data-linenumber="123">
             <span class="hits">1</span>
             
 
@@ -15277,7 +15365,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="126">
+          <li class="never" data-hits="" data-linenumber="124">
             
             
 
@@ -15288,7 +15376,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="127">
+          <li class="covered" data-hits="1" data-linenumber="125">
             <span class="hits">1</span>
             
 
@@ -15299,7 +15387,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="128">
+          <li class="covered" data-hits="1" data-linenumber="126">
             <span class="hits">1</span>
             
 
@@ -15310,7 +15398,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="129">
+          <li class="covered" data-hits="1" data-linenumber="127">
             <span class="hits">1</span>
             
 
@@ -15321,7 +15409,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="130">
+          <li class="covered" data-hits="1" data-linenumber="128">
             <span class="hits">1</span>
             
 
@@ -15332,7 +15420,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="131">
+          <li class="covered" data-hits="1" data-linenumber="129">
             <span class="hits">1</span>
             
 
@@ -15343,7 +15431,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="132">
+          <li class="covered" data-hits="1" data-linenumber="130">
             <span class="hits">1</span>
             
 
@@ -15354,7 +15442,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="133">
+          <li class="covered" data-hits="1" data-linenumber="131">
             <span class="hits">1</span>
             
 
@@ -15365,7 +15453,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="134">
+          <li class="covered" data-hits="1" data-linenumber="132">
             <span class="hits">1</span>
             
 
@@ -15376,7 +15464,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="135">
+          <li class="never" data-hits="" data-linenumber="133">
             
             
 
@@ -15387,7 +15475,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="136">
+          <li class="covered" data-hits="1" data-linenumber="134">
             <span class="hits">1</span>
             
 
@@ -15398,7 +15486,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="137">
+          <li class="never" data-hits="" data-linenumber="135">
             
             
 
@@ -15409,7 +15497,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="138">
+          <li class="never" data-hits="" data-linenumber="136">
             
             
 
@@ -15420,7 +15508,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="139">
+          <li class="covered" data-hits="1" data-linenumber="137">
             <span class="hits">1</span>
             
 
@@ -15431,13 +15519,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="140">
+          <li class="covered" data-hits="1" data-linenumber="138">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">      professional = Professional.create!(email: &#39;pro@fissional.com.br&#39;, password: &#39;123456&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="139">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="140">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      user = User.create!(email: &#39;user@user.com.br&#39;, password: &#39;123456&#39;)</code>
           </li>
         </div>
       
@@ -15459,7 +15569,7 @@
 
             
 
-            <code class="ruby">      user = User.create!(email: &#39;user@user.com.br&#39;, password: &#39;123456&#39;)</code>
+            <code class="ruby">      project = Project.create!(title: &#39;Website&#39;, description: &#39;descricao&#39;, skills: &#39;skills&#39;, price_per_hour: &#39;R$ 90,00&#39;, deadline: 2.days.from_now, remote: true, user: user )</code>
           </li>
         </div>
       
@@ -15481,7 +15591,7 @@
 
             
 
-            <code class="ruby">      project = Project.create!(title: &#39;Website&#39;, description: &#39;descricao&#39;, skills: &#39;skills&#39;, price_per_hour: &#39;R$ 90,00&#39;, deadline: 2.days.from_now, remote: true, user: user )</code>
+            <code class="ruby">      login_as professional, scope: :professional</code>
           </li>
         </div>
       
@@ -15503,7 +15613,7 @@
 
             
 
-            <code class="ruby">      login_as professional, scope: :professional</code>
+            <code class="ruby">      date = &#39;27/04/1997&#39;</code>
           </li>
         </div>
       
@@ -15525,34 +15635,12 @@
 
             
 
-            <code class="ruby">      date = &#39;27/04/1997&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="149">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="150">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">      visit root_path </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="151">
+          <li class="covered" data-hits="1" data-linenumber="149">
             <span class="hits">1</span>
             
 
@@ -15563,7 +15651,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="152">
+          <li class="never" data-hits="" data-linenumber="150">
             
             
 
@@ -15574,7 +15662,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="153">
+          <li class="covered" data-hits="1" data-linenumber="151">
             <span class="hits">1</span>
             
 
@@ -15585,7 +15673,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="154">
+          <li class="covered" data-hits="1" data-linenumber="152">
             <span class="hits">1</span>
             
 
@@ -15596,7 +15684,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="155">
+          <li class="covered" data-hits="1" data-linenumber="153">
             <span class="hits">1</span>
             
 
@@ -15607,7 +15695,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="156">
+          <li class="covered" data-hits="1" data-linenumber="154">
             <span class="hits">1</span>
             
 
@@ -15618,7 +15706,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="157">
+          <li class="covered" data-hits="1" data-linenumber="155">
             <span class="hits">1</span>
             
 
@@ -15629,7 +15717,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="158">
+          <li class="covered" data-hits="1" data-linenumber="156">
             <span class="hits">1</span>
             
 
@@ -15640,7 +15728,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="159">
+          <li class="never" data-hits="" data-linenumber="157">
             
             
 
@@ -15651,7 +15739,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="160">
+          <li class="covered" data-hits="1" data-linenumber="158">
             <span class="hits">1</span>
             
 
@@ -15662,7 +15750,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="161">
+          <li class="covered" data-hits="1" data-linenumber="159">
             <span class="hits">1</span>
             
 
@@ -15673,7 +15761,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="162">
+          <li class="covered" data-hits="1" data-linenumber="160">
             <span class="hits">1</span>
             
 
@@ -15684,7 +15772,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="163">
+          <li class="covered" data-hits="1" data-linenumber="161">
             <span class="hits">1</span>
             
 
@@ -15695,7 +15783,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="164">
+          <li class="covered" data-hits="1" data-linenumber="162">
             <span class="hits">1</span>
             
 
@@ -15706,7 +15794,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="165">
+          <li class="covered" data-hits="1" data-linenumber="163">
             <span class="hits">1</span>
             
 
@@ -15717,7 +15805,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="166">
+          <li class="covered" data-hits="1" data-linenumber="164">
             <span class="hits">1</span>
             
 
@@ -15728,7 +15816,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="167">
+          <li class="covered" data-hits="1" data-linenumber="165">
             <span class="hits">1</span>
             
 
@@ -15739,7 +15827,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="168">
+          <li class="never" data-hits="" data-linenumber="166">
             
             
 
@@ -15750,7 +15838,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="169">
+          <li class="covered" data-hits="1" data-linenumber="167">
             <span class="hits">1</span>
             
 
@@ -15761,7 +15849,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="170">
+          <li class="covered" data-hits="1" data-linenumber="168">
             <span class="hits">1</span>
             
 
@@ -15772,7 +15860,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="171">
+          <li class="never" data-hits="" data-linenumber="169">
             
             
 
@@ -15783,7 +15871,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="172">
+          <li class="never" data-hits="" data-linenumber="170">
             
             
 
@@ -15794,7 +15882,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="173">
+          <li class="covered" data-hits="1" data-linenumber="171">
             <span class="hits">1</span>
             
 
@@ -15805,13 +15893,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="174">
+          <li class="covered" data-hits="1" data-linenumber="172">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">      professional = Professional.create!(email: &#39;pro@fissional.com.br&#39;, password: &#39;123456&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="173">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="174">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      user = User.create!(email: &#39;user@user.com.br&#39;, password: &#39;123456&#39;)</code>
           </li>
         </div>
       
@@ -15833,7 +15943,7 @@
 
             
 
-            <code class="ruby">      user = User.create!(email: &#39;user@user.com.br&#39;, password: &#39;123456&#39;)</code>
+            <code class="ruby">      project = Project.create!(title: &#39;Website&#39;, description: &#39;descricao&#39;, skills: &#39;skills&#39;, price_per_hour: &#39;R$ 90,00&#39;, deadline: 2.days.from_now, remote: true, user: user )</code>
           </li>
         </div>
       
@@ -15855,7 +15965,7 @@
 
             
 
-            <code class="ruby">      project = Project.create!(title: &#39;Website&#39;, description: &#39;descricao&#39;, skills: &#39;skills&#39;, price_per_hour: &#39;R$ 90,00&#39;, deadline: 2.days.from_now, remote: true, user: user )</code>
+            <code class="ruby">      login_as professional, scope: :professional</code>
           </li>
         </div>
       
@@ -15877,7 +15987,7 @@
 
             
 
-            <code class="ruby">      login_as professional, scope: :professional</code>
+            <code class="ruby">      date = &#39;27/04/1997&#39;</code>
           </li>
         </div>
       
@@ -15899,34 +16009,12 @@
 
             
 
-            <code class="ruby">      date = &#39;27/04/1997&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="183">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="184">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">      visit root_path </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="185">
+          <li class="covered" data-hits="1" data-linenumber="183">
             <span class="hits">1</span>
             
 
@@ -15937,7 +16025,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="186">
+          <li class="never" data-hits="" data-linenumber="184">
             
             
 
@@ -15948,7 +16036,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="187">
+          <li class="covered" data-hits="1" data-linenumber="185">
             <span class="hits">1</span>
             
 
@@ -15959,7 +16047,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="188">
+          <li class="covered" data-hits="1" data-linenumber="186">
             <span class="hits">1</span>
             
 
@@ -15970,7 +16058,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="189">
+          <li class="covered" data-hits="1" data-linenumber="187">
             <span class="hits">1</span>
             
 
@@ -15981,7 +16069,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="190">
+          <li class="covered" data-hits="1" data-linenumber="188">
             <span class="hits">1</span>
             
 
@@ -15992,7 +16080,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="191">
+          <li class="covered" data-hits="1" data-linenumber="189">
             <span class="hits">1</span>
             
 
@@ -16003,13 +16091,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="192">
+          <li class="covered" data-hits="1" data-linenumber="190">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">      fill_in &#39;Experiência em anos&#39;, with: &#39;2&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="191">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="192">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      project_application = ProjectApplication.create!(introduction: &quot;Olá quero participar&quot;,professional: professional, project: project, status: 10, updated_at: 2.days.ago)</code>
           </li>
         </div>
       
@@ -16031,34 +16141,12 @@
 
             
 
-            <code class="ruby">      project_application = ProjectApplication.create!(introduction: &quot;Olá quero participar&quot;,professional: professional, project: project, status: 10, updated_at: 2.days.ago)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="195">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="196">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">      visit project_applications_path</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="197">
+          <li class="covered" data-hits="1" data-linenumber="195">
             <span class="hits">1</span>
             
 
@@ -16069,7 +16157,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="198">
+          <li class="covered" data-hits="1" data-linenumber="196">
             <span class="hits">1</span>
             
 
@@ -16080,7 +16168,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="199">
+          <li class="covered" data-hits="1" data-linenumber="197">
             <span class="hits">1</span>
             
 
@@ -16091,7 +16179,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="200">
+          <li class="never" data-hits="" data-linenumber="198">
             
             
 
@@ -16102,7 +16190,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="201">
+          <li class="covered" data-hits="1" data-linenumber="199">
             <span class="hits">1</span>
             
 
@@ -16113,7 +16201,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="202">
+          <li class="covered" data-hits="1" data-linenumber="200">
             <span class="hits">1</span>
             
 
@@ -16124,7 +16212,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="203">
+          <li class="never" data-hits="" data-linenumber="201">
             
             
 
@@ -16135,7 +16223,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="204">
+          <li class="never" data-hits="" data-linenumber="202">
             
             
 
@@ -16146,7 +16234,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="205">
+          <li class="covered" data-hits="1" data-linenumber="203">
             <span class="hits">1</span>
             
 
@@ -16157,7 +16245,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="206">
+          <li class="covered" data-hits="1" data-linenumber="204">
             <span class="hits">1</span>
             
 
@@ -16168,7 +16256,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="207">
+          <li class="covered" data-hits="1" data-linenumber="205">
             <span class="hits">1</span>
             
 
@@ -16179,7 +16267,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="208">
+          <li class="covered" data-hits="1" data-linenumber="206">
             <span class="hits">1</span>
             
 
@@ -16190,7 +16278,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="209">
+          <li class="covered" data-hits="1" data-linenumber="207">
             <span class="hits">1</span>
             
 
@@ -16201,7 +16289,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="210">
+          <li class="covered" data-hits="1" data-linenumber="208">
             <span class="hits">1</span>
             
 
@@ -16212,7 +16300,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="211">
+          <li class="never" data-hits="" data-linenumber="209">
             
             
 
@@ -16223,7 +16311,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="212">
+          <li class="covered" data-hits="1" data-linenumber="210">
             <span class="hits">1</span>
             
 
@@ -16234,7 +16322,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="213">
+          <li class="covered" data-hits="1" data-linenumber="211">
             <span class="hits">1</span>
             
 
@@ -16245,7 +16333,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="214">
+          <li class="never" data-hits="" data-linenumber="212">
             
             
 
@@ -16256,7 +16344,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="215">
+          <li class="covered" data-hits="1" data-linenumber="213">
             <span class="hits">1</span>
             
 
@@ -16267,7 +16355,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="216">
+          <li class="covered" data-hits="1" data-linenumber="214">
             <span class="hits">1</span>
             
 
@@ -16278,7 +16366,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="217">
+          <li class="covered" data-hits="1" data-linenumber="215">
             <span class="hits">1</span>
             
 
@@ -16289,7 +16377,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="218">
+          <li class="covered" data-hits="1" data-linenumber="216">
             <span class="hits">1</span>
             
 
@@ -16300,7 +16388,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="219">
+          <li class="covered" data-hits="1" data-linenumber="217">
             <span class="hits">1</span>
             
 
@@ -16311,7 +16399,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="220">
+          <li class="covered" data-hits="1" data-linenumber="218">
             <span class="hits">1</span>
             
 
@@ -16322,7 +16410,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="221">
+          <li class="never" data-hits="" data-linenumber="219">
             
             
 
@@ -16333,7 +16421,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="222">
+          <li class="covered" data-hits="1" data-linenumber="220">
             <span class="hits">1</span>
             
 
@@ -16344,7 +16432,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="223">
+          <li class="covered" data-hits="1" data-linenumber="221">
             <span class="hits">1</span>
             
 
@@ -16355,7 +16443,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="224">
+          <li class="never" data-hits="" data-linenumber="222">
             
             
 
@@ -16366,7 +16454,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="225">
+          <li class="never" data-hits="" data-linenumber="223">
             
             
 
@@ -16377,7 +16465,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="226">
+          <li class="covered" data-hits="1" data-linenumber="224">
             <span class="hits">1</span>
             
 
@@ -16388,7 +16476,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="227">
+          <li class="covered" data-hits="1" data-linenumber="225">
             <span class="hits">1</span>
             
 
@@ -16399,7 +16487,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="228">
+          <li class="never" data-hits="" data-linenumber="226">
             
             
 
@@ -16410,7 +16498,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="229">
+          <li class="never" data-hits="" data-linenumber="227">
             
             
 
