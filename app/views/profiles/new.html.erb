@@ -1,4 +1,7 @@
 <%= form_with(model: [@professional, @profile])  do |f| %>
+  <%= @profile.errors.full_messages_for(:professional).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
   <div>
     <%= f.label :full_name, 'Nome completo' %>
     <%= f.text_field :full_name %>

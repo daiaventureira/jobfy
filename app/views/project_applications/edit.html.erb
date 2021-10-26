@@ -1,4 +1,7 @@
 <%= form_with model:[@projects, @project_application] do |f| %>
+  <%= @project_application.errors.full_messages_for(:projects).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
   <div>
     <%= f.label :reason, "Justificativa" %>
     <%= f.text_field :reason %>
