@@ -1,5 +1,5 @@
 class ProjectApplicationsController < ApplicationController 
-  before_action :authenticate_professional!, only: %i[show create destroy]
+  before_action :authenticate_professional!, only: %i[show create destroy update]
   before_action :authenticate_user!, only: %i[accept reject]
 
   def index 
