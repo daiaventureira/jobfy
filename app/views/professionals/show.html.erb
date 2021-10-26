@@ -2,34 +2,34 @@
   <%= form_with model: [@professional, @profile] do |f| %>
     <%= render partial: "shared/flash"%>
     <%= render "shared/form_errors", form: f %>
-   <div class="row mb-3">
-        <div>
-          <%= f.label :full_name, 'Nome completo', class:"col-sm-2 col-form-label mt-3" %>
-          <div class="col-sm-10">
-            <%= f.text_field :full_name, class:"form-control" %>
-          </div>
-        </div>
-        <div>
-          <%= f.label :social_name, 'Nome social', class:"col-sm-2 col-form-label mt-3" %>
-          <%= f.text_field :social_name, class:"form-control"%>
-        </div>
-        <div>
-          <%= f.label :birth_date, 'Data de nascimento', class:"col-sm-2 col-form-label mt-3" %>
-          <%= f.date_field :birth_date, class:"form-control" %>
-        </div>
-          <div>
-          <%= f.label :educational_background, 'Formação', class:"col-sm-2 col-form-label mt-3" %>
-          <%= f.text_field :educational_background, class:"form-control"%>
-        </div>
-        <div>
-          <%= f.label :description, 'Descrição', class:"col-sm-2 col-form-label mt-3" %>
-          <%= f.text_field :description, class:"form-control" %>
-        </div>
-        <div>
-          <%= f.label :experience, 'Experiência em anos', class:"col-sm-2 col-form-label mt-3" %>
-          <%= f.number_field :experience, class:"form-control" %>
+    <div class="row mb-3">
+      <div>
+        <%= f.label :full_name, 'Nome completo', class:"col-sm-2 col-form-label mt-3" %>
+        <div class="col-sm-10">
+          <%= f.text_field :full_name, class:"form-control" %>
         </div>
       </div>
+      <div>
+        <%= f.label :social_name, 'Nome social', class:"col-sm-2 col-form-label mt-3" %>
+        <%= f.text_field :social_name, class:"form-control"%>
+      </div>
+      <div>
+        <%= f.label :birth_date, 'Data de nascimento', class:"col-sm-2 col-form-label mt-3" %>
+        <%= f.date_field :birth_date, class:"form-control" %>
+      </div>
+      <div>
+        <%= f.label :educational_background, 'Formação', class:"col-sm-2 col-form-label mt-3" %>
+        <%= f.text_field :educational_background, class:"form-control"%>
+      </div>
+      <div>
+        <%= f.label :description, 'Descrição', class:"col-sm-2 col-form-label mt-3" %>
+        <%= f.text_field :description, class:"form-control" %>
+      </div>
+      <div>
+        <%= f.label :experience, 'Experiência em anos', class:"col-sm-2 col-form-label mt-3" %>
+        <%= f.number_field :experience, class:"form-control" %>
+      </div>
+    </div>
     <%= f.submit 'Criar', class:"btn btn-primary" %>
   <% end %>
 <% end %>

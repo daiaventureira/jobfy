@@ -1,64 +1,62 @@
 <% @project_application.each do |p|%>
-   
-   <% if p.project.closed? && p.rejected? || p.project.closed? && p.pending?%>
-   <%elsif professional_signed_in? && current_professional.id == p.professional_id%>
-        <div>
-          <p>Projeto: <%= p.project.title%></p>
-          <p>Introdução <%= p.introduction%></p>
-        </div>     
-    <% end %> 
+  <% if p.project.closed? && p.rejected? || p.project.closed? && p.pending?%>
+  <%elsif professional_signed_in? && current_professional.id == p.professional_id%>
+    <div>
+      <p>Projeto: <%= p.project.title%></p>
+      <p>Introdução <%= p.introduction%></p>
+    </div>
+  <% end %>
   <% if  professional_signed_in? && current_professional.id == p.professional_id  && p.reason%>
-      <p class="alert alert-primary" role="alert">Você cancelou essa aplicação com a justificativa de: <%= p.reason%></p> 
-  <% elsif  professional_signed_in? && current_professional.id == p.professional_id  && p.pending? && p.project.active? %> 
+    <p class="alert alert-primary" role="alert">Você cancelou essa aplicação com a justificativa de: <%= p.reason%></p>
+  <% elsif  professional_signed_in? && current_professional.id == p.professional_id  && p.pending? && p.project.active? %>
     <p class="alert alert-primary" role="alert">Sua candidatura está pendente</p>
     <p><%=link_to "Cancelar sua aplicação", project_application_path(p, p.id), method: :delete %></p>
   <% elsif professional_signed_in? && current_professional.id == p.professional_id  && p.accepted?  %>
     <% if p.updated_at > 3.days.ago %>
-        <p class="alert alert-success" role="alert"> Sua candidatura foi aceita! </p>
-        <p><%=link_to "Cancele sua aplicação", edit_project_application_path(p, p.id) %></p>
+      <p class="alert alert-success" role="alert"> Sua candidatura foi aceita! </p>
+      <p><%=link_to "Cancele sua aplicação", edit_project_application_path(p, p.id) %></p>
     <% else %>
       <p class="alert alert-success" role="alert"> Sua candidatura foi aceita! </p>
     <% end %>
   <% elsif professional_signed_in? && current_professional.id == p.professional_id && p.rejected? && p.project.active? %>
-      <p class="alert alert-danger" role="alert">Sua candidatura foi recusada mas não desanime! Temos muitos projetos que encaixam no seu perfil</p>    
+    <p class="alert alert-danger" role="alert">Sua candidatura foi recusada mas não desanime! Temos muitos projetos que encaixam no seu perfil</p>
   <% end %>
 <% end %>
-  
-  <% if user_signed_in?%>
-    <p>Candidaturas</p>
-      <% @project_application.each do |p|%>
-      <div class="row">
-        <% if user_signed_in? && current_user.id == p.project.user_id && !p.reason %>
-          <div class="row-lg-100">
-            <div class="card" >
-              <div class="card-body">
-                <h5 class="card-title"><%= p.project.title%></h5>
-                <dt>Introdução</dt>
-                <h6 clas="card-subtitle"><%= p.introduction%></h6>
-                <dt>Nome do profissional:</dt>
-                <%# <% if !p.professional.profile.social_name && p.professional.profile.social_name.length > 0 %> 
-                  <%# <h6 class="card-text"> <%= p.professional.profile.social_name %></h6> 
-                <%# <% else %> 
-                    <h6 class="card-text"> <%= p.professional.profile.full_name %></h6>
-                <%# <% end %> 
-                <dt>Mande um email para contatar o profissional:</dt>
-                <h6 class="card-text"> <%=mail_to p.professional.email%></h6>
-                <dt>Data de nascimento:</dt>
-                <h6 class="card-text"><%= p.professional.profile.birth_date.strftime("%d/%m/%Y") %></h6>
-                <dt>Status:</dt>
-                <dd><%= p.status%></dd>
-                <% if p.pending? && !p.project.closed?%>
-                  <p><%= link_to 'Aceitar', accept_project_application_path(p.id), method: :post, class: "btn btn-primary" %></p>
-                  <p><%= link_to 'Recusar', reject_project_application_path(p.id), method: :post, class: "btn btn-primary" %></p>
-                <% end %>
-                <% if p.project.closed?%>
-                    <p class="alert alert-warning" role="alert">Você encerrou as inscrições para este projeto!</p>    
-                <% elsif p.project.deadline < DateTime.current%>
-                  <p class="alert alert-warning" role="alert">Data limite para profissionais aplicarem para o projeto expirou</p>    
-                <% end %>
-              </div>
-            </div>
-          <div>
+<% if user_signed_in?%>
+  <p>Candidaturas</p>
+  <% @project_application.each do |p|%>
+    <div class="row">
+      <% if user_signed_in? && current_user.id == p.project.user_id && !p.reason %>
+        <div class="row-lg-100">
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title"><%= p.project.title%></h5>
+              <dt>Introdução</dt>
+              <h6 clas="card-subtitle"><%= p.introduction%></h6>
+              <dt>Nome do profissional:</dt>
+              <%# <% if !p.professional.profile.social_name && p.professional.profile.social_name.length > 0 %>
+              <%# <h6 class="card-text"> <%= p.professional.profile.social_name %></h6>
+            <%# <% else %>
+            <h6 class="card-text"> <%= p.professional.profile.full_name %></h6>
+            <%# <% end %>
+            <dt>Mande um email para contatar o profissional:</dt>
+            <h6 class="card-text"> <%=mail_to p.professional.email%></h6>
+            <dt>Data de nascimento:</dt>
+            <h6 class="card-text"><%= p.professional.profile.birth_date.strftime("%d/%m/%Y") %></h6>
+            <dt>Status:</dt>
+            <dd><%= p.status%></dd>
+            <% if p.pending? && !p.project.closed?%>
+              <p><%= link_to 'Aceitar', accept_project_application_path(p.id), method: :post, class: "btn btn-primary" %></p>
+              <p><%= link_to 'Recusar', reject_project_application_path(p.id), method: :post, class: "btn btn-primary" %></p>
+            <% end %>
+            <% if p.project.closed?%>
+              <p class="alert alert-warning" role="alert">Você encerrou as inscrições para este projeto!</p>
+            <% elsif p.project.deadline < DateTime.current%>
+              <p class="alert alert-warning" role="alert">Data limite para profissionais aplicarem para o projeto expirou</p>
+            <% end %>
+          </div>
+        </div>
+        <div>
         <% elsif p.reason? %>
           <div class="row">
             <div class="row-lg-100">
@@ -66,19 +64,16 @@
                 <div class="card-body">
                   <h5 class="card-title">Motivo:</h5>
                   <h6 clas="card-subtitle"><%= p.reason%></h6>
-                    <% if p.professional.profile.social_name.length > 0%>
-                      <p class="alert alert-danger" role="alert"><%= p.professional.profile.social_name%> cancelou a aplicação</p>  
-                    <% else %>
-                      <p class="alert alert-danger" role="alert"><%= p.professional.profile.full_name%> cancelou a aplicação</p>  
-                    <% end %>  
+                  <% if p.professional.profile.social_name.length > 0%>
+                    <p class="alert alert-danger" role="alert"><%= p.professional.profile.social_name%> cancelou a aplicação</p>
+                  <% else %>
+                    <p class="alert alert-danger" role="alert"><%= p.professional.profile.full_name%> cancelou a aplicação</p>
+                  <% end %>
                 </div>
               </div>
             </div>
           </div>
         <% end %>
-        </div>
-      <% end %>
+      </div>
+    <% end %>
   <% end %>
-
-
-

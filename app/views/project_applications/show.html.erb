@@ -1,22 +1,21 @@
-    <% if @project_application.project.errors.any? %>
-        <ul>
-          <% @project_application.project.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-      </ul>
+<% if @project_application.project.errors.any? %>
+  <ul>
+    <% @project_application.project.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
 <% end %>
 <% if user_signed_in? %>
   <h1>Aplicações para o projeto <%= @project_application.project.title%></h1>
   <dl>
     <dt>Introdução </dt>
-    <dd><%= @project_application.introduction%>
+    <dd><%= @project_application.introduction%></dd>
   </dl>
 <% end %>
 <% if professional_signed_in? && current_professional.project_applications%>
   <h1>Sua Aplicação para o projeto <%= @project_application.project.title%></h1>
   <dl>
     <dt>Introdução: </dt>
-    <dd><%= @project_application.introduction%>
+    <dd><%= @project_application.introduction%></dd>
   </dl>
 <% end %>
-

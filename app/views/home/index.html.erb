@@ -1,48 +1,43 @@
-<h1 class="mb-3 mt-3">Jobfy<h1>
- <% if professional_signed_in? && current_professional.profile %>
-        <h4 class="font-monospace mt-3 mb-3 lh-lg">Olá 
-            <% if current_professional.profile.social_name && current_professional.profile.social_name.length > 0%>
-                <%= current_professional.profile.social_name%>
-            <% else %>
-                <%= current_professional.profile.full_name%>
-            <% end %> :)
-        </h4>    
- <% end %> 
-
-<h2 class="font-monospace mt-3 mb-3 lh-lg">Bem vinde ao jobfy!</h2>
-<h3 class="font-monospace mt-3 mb-3 lh-lg">Conectando desenvolvedores e projetos.</h3> 
-
-<div class="row">
-    <% @projects.each do |p|%>
+<h1 class="mb-3 mt-3">Jobfy
+  <h1>
+    <% if professional_signed_in? && current_professional.profile %>
+      <h4 class="font-monospace mt-3 mb-3 lh-lg">Olá 
+        <% if current_professional.profile.social_name && current_professional.profile.social_name.length > 0%>
+          <%= current_professional.profile.social_name%>
+        <% else %>
+          <%= current_professional.profile.full_name%>
+        <% end %> :)
+      </h4>
+    <% end %>
+    <h2 class="font-monospace mt-3 mb-3 lh-lg">Bem vinde ao jobfy!</h2>
+    <h3 class="font-monospace mt-3 mb-3 lh-lg">Conectando desenvolvedores e projetos.</h3>
+    <div class="row">
+      <% @projects.each do |p|%>
         <% if user_signed_in? && current_user.id == p.user_id %>
-                <div class="col-sm-6">
-                    <div class="card" >
-                        <div class="card-body">
-                                <h5 class="card-title"> Título: <%= p.title%></h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Descrição: <%= p.description%></h6>
-                                <p class="card-text ">Habilidades: <%= p.skills%></p>
-                                <p class="card-text"> Preço por hora: <%= number_to_currency(p.price_per_hour, unit: 'R$', separator: ',', format: '%u %n') %></p>
-                            <p class="card-text">
-                                <dt>Local de atuação:</dt>
-                                <% if p.remote? %>
-                                        <dd>Remoto</dd>
-                                    <% else %>
-                                        <dd>Presencial</dd>
-                                    <% end %>
-                                </p>
-                        <p class="card-text">Data limite: <%= p.deadline.strftime("%d/%m/%Y") %></p>
-                        <% if p.active? %>
-                        <%= link_to "Encerrar inscrições", close_project_path(current_user, p.id), method: :post, class:"btn btn-primary" %>
-
-                        <% elsif p.closed?%>
-                            <%= link_to "Encerradas","#", class:"btn btn-success"%>
-                        <% end %>
-                        </div>
-                    </div>
-                </div>
+          <div class="col-sm-6">
+            <div class="card" >
+              <div class="card-body">
+                <h5 class="card-title"> Título: <%= p.title%></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Descrição: <%= p.description%></h6>
+                <p class="card-text ">Habilidades: <%= p.skills%></p>
+                <p class="card-text"> Preço por hora: <%= number_to_currency(p.price_per_hour, unit: 'R$', separator: ',', format: '%u %n') %></p>
+                <p class="card-text">
+                  <dt>Local de atuação:</dt>
+                  <% if p.remote? %>
+                    <dd>Remoto</dd>
+                  <% else %>
+                    <dd>Presencial</dd>
+                  <% end %>
+                </p>
+                <p class="card-text">Data limite: <%= p.deadline.strftime("%d/%m/%Y") %></p>
+                <% if p.active? %>
+                  <%= link_to "Encerrar inscrições", close_project_path(current_user, p.id), method: :post, class:"btn btn-primary" %>
+                <% elsif p.closed?%>
+                  <%= link_to "Encerradas","#", class:"btn btn-success"%>
+                <% end %>
+              </div>
+            </div>
+          </div>
         <% end %>
-    <%end%>
-</div>
-
-
-   
+      <%end%>
+    </div>

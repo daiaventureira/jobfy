@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :professionals 
-  resources :professionals do 
+  resources :professionals, only: %i[show] do 
     resources :profiles, only: %i[create show]
   end
 
