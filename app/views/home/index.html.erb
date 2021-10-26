@@ -1,10 +1,7 @@
-<% if professional_signed_in? && current_professional.profile %>
-        <p><%=image_tag current_professional.profile.avatar, class:"float-end w-25 p-3 img-thumbnail mb-3", alt:'Foto'%></p>
-<% end %> 
 <h1 class="mb-3 mt-3">Jobfy<h1>
  <% if professional_signed_in? && current_professional.profile %>
         <h4 class="font-monospace mt-3 mb-3 lh-lg">Olá 
-            <% if current_professional.profile.social_name.length > 0%>
+            <% if current_professional.profile.social_name && current_professional.profile.social_name.length > 0%>
                 <%= current_professional.profile.social_name%>
             <% else %>
                 <%= current_professional.profile.full_name%>

@@ -26,9 +26,10 @@ describe "User creates project" do
     expect(page).to have_content("Data limite: #{deadline.strftime("%d/%m/%Y")}")
     expect(page).to have_link("Encerrar inscrições")
   end
+
   it "and closes applications for that project" do 
     user = User.create!(email: 'user@user.com.br', password: '123456')
-    project = Project.create!(title: "Projeto", description: "Descrição de um projeto", skills: "Habilidades de um profissional", deadline: 2.days.from_now, price_per_hour: 230, user: user  )
+    project = Project.create!(title: "Projeto", description: "Descrição de um projeto", skills: "Habilidades de um profissional", deadline: 2.days.from_now, price_per_hour: 230,remote: false, user: user  )
     
     login_as user, scope: :user 
 
@@ -38,9 +39,10 @@ describe "User creates project" do
 
     expect(page).to have_link("Encerradas")
   end
+
   it "and sees aplications" do 
     user = User.create!(email: 'user@user.com.br', password: '123456')
-    project = Project.create!(title: "Projeto", description: "Descrição de um projeto", skills: "Habilidades de um profissional", deadline: 2.days.from_now, price_per_hour: 230, user: user  )
+    project = Project.create!(title: "Projeto", description: "Descrição de um projeto", skills: "Habilidades de um profissional", deadline: 2.days.from_now, price_per_hour: 230, remote: false, user: user  )
     
     professional = Professional.create!(email: 'user@user.com.br', password: '123456')
     date = '27/04/1997'
@@ -55,7 +57,6 @@ describe "User creates project" do
     fill_in 'Descrição', with: 'Olá essa é minha descriçao'
     fill_in 'Formação', with: 'Olá essa é minha formação'
     fill_in 'Experiência em anos', with: '2'
-    attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
 
     click_on "Criar"
     click_on "Ver projetos disponíveis"
@@ -75,6 +76,52 @@ describe "User creates project" do
     expect(page).to have_content("Ola quero me candidatar")
     expect(page).to have_content("Nome do profissional")
     expect(page).to have_content("Joao")
+  end
+
+  it 'goes to add project page' do      
+      dai = User.create!(email: 'dai@ane.com.br', password: '123456')
+
+      login_as dai, scope: :user 
+      visit root_path
+      click_on 'Adicionar projeto'
+
+      expect(page).to have_content('Título')
+      expect(page).to have_content('Descrição')
+      expect(page).to have_content('Preço por hora')
+      expect(page).to have_content('Data limite')
+      expect(page).to have_content('Remoto') 
+  end
+
+  it 'and should not be valid' do 
+      projeto = Project.new(title: 'Website', description: 'descricao', skills: 'skills', price_per_hour: 'R$ 90,00', deadline: 1.day.ago, remote: true )
+
+      visit projects_path
+
+      expect(projeto.valid?).to eq false
+  end
+
+  it "unsuccessfully" do 
+    user = User.create!(email: 'user@user.com.br', password: '123456')
+
+    login_as user, scope: :user 
+
+    visit root_path
+    deadline = 2.days.from_now
+    click_on "Adicionar projeto"
+
+    fill_in "Título:", with: "Projeto"
+    fill_in "Descrição:", with: "Descrição de um projeto"
+    fill_in "Habilidades:", with: "Habilidades de um profissional"
+    fill_in "Data limite:", with: deadline 
+
+    click_on 'Adicionar'
+    
+    expect(page).to have_current_path('/projects')
+    expect(page).to_not have_content("Título: Projeto")
+    expect(page).to_not have_content("Descrição: Descrição de um projeto")
+    expect(page).to_not have_content("Habilidades: Habilidades de um profissional")
+    expect(page).to_not have_content("Data limite: #{deadline.strftime("%d/%m/%Y")}")
+    expect(page).to_not have_link("Encerrar inscrições")
   end
 end
 

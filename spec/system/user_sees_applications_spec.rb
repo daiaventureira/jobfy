@@ -12,35 +12,24 @@ describe 'User sees applications' do
 
     expect(page).to have_current_path('/project_applications')
     expect(page).to have_content('Candidaturas')
-    # expect(page).to have_content( 'Status: pendente')
   end
 
   it 'and accepts request' do 
-
-    professional = Professional.create!(email: 'pro@fissional.com.br', password: '123456')
-
     user = User.create!(email: 'user@user.com.br', password: '123456')
-
-    project = Project.create!(title: 'Website', description: 'descricao', skills: 'skills', price_per_hour: 'R$ 90,00', deadline: 2.days.from_now, remote: true, user: user )
-    login_as professional, scope: :professional
-    date = '27/04/1997'
-
-    visit root_path 
-    click_on 'Crie'
+    project = Project.new(title: 'web', description: 'descricao', skills: 'skills', price_per_hour: 'R$ 90,00', deadline: 2.days.from_now, remote: true, user: user )
     
-    fill_in 'Nome completo', with: 'Daiane Souza'
-    fill_in 'Nome social', with: 'Dai'
-    fill_in 'Data de nascimento', with: date
-    fill_in 'Descrição', with: 'Olá essa é minha descriçao'
-    fill_in 'Formação', with: 'Olá essa é minha formação'
-    attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
+    professional = Professional.new(email: 'pro@fissional.com.br', password: '123456')
+    profile = Profile.new(full_name: 'Isa Manueli', birth_date: "27/04/1997", description: "oi eu sou a iza", educational_background: "Artes", experience: '2', professional: professional)
+    ProjectApplication.create!(introduction: "Oi quero participar", professional: professional, project: project )
+    
+    login_as user, scope: :user
 
-    click_on "Criar"
+    visit project_applications_path 
+    click_on "Aceitar"
 
-    visit root_path
-    click_on 'Ver projetos disponíveis'
-    click_on "Web"
-
+    expect(page).to have_content("Isa Manueli")
+    expect(page).to have_content("Status: accepted")
+    expect(page).to_not have_link("Aceitar")
+    expect(page).to_not have_link("Recusar") 
   end
-
 end

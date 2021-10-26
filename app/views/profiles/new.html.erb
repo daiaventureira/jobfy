@@ -1,5 +1,4 @@
 <%= form_with(model: [@professional, @profile])  do |f| %>
-  <%= render "shared/form_errors", form: f %>
   <div>
     <%= f.label :full_name, 'Nome completo' %>
     <%= f.text_field :full_name %>
@@ -21,13 +20,8 @@
     <%= f.text_field :description %>
   </div>
   <div>
-      <%= f.label :experience, 'Experiência em anos' %>
-      <%= f.number_field :experience %>
-    </div>
-  <div>
-    <%= f.label :avatar, 'Foto', class:"foto", alt: 'Foto' %>
-    <%= f.file_field :avatar, class:"foto" %>
-  </div>
-  
+    <%= f.label :experience, 'Experiência em anos' %>
+    <%= f.number_field :experience %>
+  </div>  
   <%= f.submit 'Crie' %>
 <% end %>

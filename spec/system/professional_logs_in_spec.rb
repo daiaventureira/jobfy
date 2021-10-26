@@ -8,7 +8,7 @@ describe 'Professional signs up' do
     click_on 'Sign up'
     
     fill_in 'Email', with: 'professional@p.com.br'
-    fill_in 'password', with: '123456'
+    fill_in 'Password', with: '123456'
     fill_in 'Password confirmation', with: '123456'
     
     click_on 'Sign up'
@@ -48,6 +48,32 @@ describe 'Professional signs up' do
     expect(page).to have_content("Signed out successfully.")
     expect(page).to_not have_current_path("/projects")
     expect(page).to have_current_path("/")
+  end
 
+  it "professional gets error if not authenticated" do 
+    visit root_path
+    
+    click_on "Entrar como profissional"
+    click_on 'Sign up'
+    
+    fill_in 'Email', with: 'professional@p.com.br'
+    fill_in 'Password', with: '1236'
+    fill_in 'Password confirmation', with: '1236'
+    
+    click_on 'Sign up'
+    
+    expect(page).to have_content('Password is too short (minimum is 6 characters)')
+  end
+  it "professional gets error if not have an account" do 
+    visit root_path
+    
+    click_on "Entrar como profissional"   
+
+    fill_in 'Email', with: 'professional@p.com.br'
+    fill_in 'Password', with: '1236'
+
+    click_on 'Log in'
+    
+    expect(page).to have_content('Invalid Email or password')
   end
 end

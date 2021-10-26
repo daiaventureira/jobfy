@@ -1,8 +1,5 @@
 <% if professional_signed_in? %>
-  <p><%=image_tag current_professional.profile.avatar, class:"float-end w-25 p-3 img-thumbnail mb-3", alt:'Foto'%></p>
     <%= form_with model: [@professional, @profile] do |f| %>
-      <%= render partial: "shared/flash"%>
-      <%= render "shared/form_errors", form: f %>
       <div class="row mb-3">
         <div>
           <%= f.label :full_name, 'Nome completo', class:"col-sm-2 col-form-label mt-3" %>
@@ -29,10 +26,6 @@
         <div>
           <%= f.label :experience, 'Experiência em anos', class:"col-sm-2 col-form-label mt-3" %>
           <%= f.number_field :experience, class:"form-control" %>
-        </div>
-          <div>
-          <%= f.label :avatar, 'Foto', class:"col-sm-2 col-form-label mb-3 mt-3" %>
-          <%= f.file_field :avatar %>
         </div>
       </div>
     <%= f.submit 'Atualizar', class:"btn btn-primary" %>

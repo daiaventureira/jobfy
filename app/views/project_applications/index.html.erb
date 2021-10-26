@@ -35,7 +35,7 @@
                 <dt>Introdução</dt>
                 <h6 clas="card-subtitle"><%= p.introduction%></h6>
                 <dt>Nome do profissional:</dt>
-                <% if p.professional.profile.social_name.length > 0 %>
+                <% if p.professional.profile.social_name && p.professional.profile.social_name.length > 0 %>
                   <h6 class="card-text"> <%= p.professional.profile.social_name %></h6>
                 <% else %>
                     <h6 class="card-text"> <%= p.professional.profile.full_name %></h6>

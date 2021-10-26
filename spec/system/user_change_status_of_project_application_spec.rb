@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "User change status of project aplication" do 
   it "to accepted" do 
     user = User.create!(email: 'user@user.com.br', password: '123456')
-    project = Project.create!(title: "Projeto", description: "Descrição de um projeto", skills: "Habilidades de um profissional", deadline: 2.days.from_now, price_per_hour: 230, user: user  )
+    project = Project.create!(title: "Projeto", description: "Descrição de um projeto", skills: "Habilidades de um profissional", deadline: 2.days.from_now, price_per_hour: 230, user: user, remote: false )
     
     professional = Professional.create!(email: 'user@user.com.br', password: '123456')
     date = '27/04/1997'
@@ -18,7 +18,6 @@ describe "User change status of project aplication" do
     fill_in 'Descrição', with: 'Olá essa é minha descriçao'
     fill_in 'Formação', with: 'Olá essa é minha formação'
     fill_in 'Experiência em anos', with: '2'
-    attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
 
     click_on "Criar"
     click_on "Ver projetos disponíveis"
@@ -38,9 +37,10 @@ describe "User change status of project aplication" do
     expect(page).to have_content("Você aceitou a proposta!")
     expect(page).to have_content('Status: accepted')
   end
+  
   it "to rejected" do 
     user = User.create!(email: 'user@user.com.br', password: '123456')
-    project = Project.create!(title: "Projeto", description: "Descrição de um projeto", skills: "Habilidades de um profissional", deadline: 2.days.from_now, price_per_hour: 230, user: user  )
+    project = Project.create!(title: "Projeto", description: "Descrição de um projeto", skills: "Habilidades de um profissional", deadline: 2.days.from_now, price_per_hour: 230, remote: false, user: user  )
     
     professional = Professional.create!(email: 'user@user.com.br', password: '123456')
     date = '27/04/1997'
@@ -54,7 +54,6 @@ describe "User change status of project aplication" do
     fill_in 'Descrição', with: 'Olá essa é minha descriçao'
     fill_in 'Formação', with: 'Olá essa é minha formação'
     fill_in 'Experiência em anos', with: '2'
-    attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
 
     click_on "Criar"
     click_on "Ver projetos disponíveis"

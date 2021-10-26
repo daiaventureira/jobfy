@@ -5,10 +5,6 @@ class ProjectsController < ApplicationController
         @projects = Project.all
     end
 
-    def show 
-        @projects = Project.find(params[:id])
-        @project_application = ProjectApplication.new
-    end
 
     def new 
         @projects = Project.new
@@ -22,6 +18,11 @@ class ProjectsController < ApplicationController
         else
             render :new
         end
+    end
+
+    def show 
+        @projects = Project.find(params[:id])
+        @project_application = ProjectApplication.new
     end
 
     def close 

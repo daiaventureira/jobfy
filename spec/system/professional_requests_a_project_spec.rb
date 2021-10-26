@@ -21,7 +21,6 @@ describe 'professional requests a project' do
       fill_in 'Descrição', with: 'Olá essa é minha descriçao'
       fill_in 'Formação', with: 'Olá essa é minha formação'
       fill_in 'Experiência em anos', with: '2'
-      attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
   
       click_on "Criar"
   
@@ -61,7 +60,6 @@ describe 'professional requests a project' do
       fill_in 'Descrição', with: 'Olá essa é minha descriçao'
       fill_in 'Formação', with: 'Olá essa é minha formação'
       fill_in 'Experiência em anos', with: '2'
-      attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
   
       click_on "Criar"
       visit root_path
@@ -94,7 +92,6 @@ describe 'professional requests a project' do
       fill_in 'Descrição', with: 'Olá essa é minha descriçao'
       fill_in 'Formação', with: 'Olá essa é minha formação'
       fill_in 'Experiência em anos', with: '2'
-      attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
   
       click_on "Criar"
       visit root_path
@@ -107,6 +104,7 @@ describe 'professional requests a project' do
 
       expect(page).to have_content("Você já se candidatou! Acompanhe suas aplicações. Em breve terá uma resposta.")
     end
+
     it "and can cancel application if pending" do 
       professional = Professional.create!(email: 'pro@fissional.com.br', password: '123456')
 
@@ -127,7 +125,6 @@ describe 'professional requests a project' do
       fill_in 'Descrição', with: 'Olá essa é minha descriçao'
       fill_in 'Formação', with: 'Olá essa é minha formação'
       fill_in 'Experiência em anos', with: '2'
-      attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
   
       click_on "Criar"
       visit root_path
@@ -141,6 +138,7 @@ describe 'professional requests a project' do
       expect(page).to_not have_content("Sua candidatura está pendente")
       expect(page).to have_content("Você cancelou uma proposta")
     end
+
     it "and cancel application if it's been accepted in less than 3 days" do 
       professional = Professional.create!(email: 'pro@fissional.com.br', password: '123456')
 
@@ -161,7 +159,6 @@ describe 'professional requests a project' do
       fill_in 'Descrição', with: 'Olá essa é minha descriçao'
       fill_in 'Formação', with: 'Olá essa é minha formação'
       fill_in 'Experiência em anos', with: '2'
-      attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
 
       project_application = ProjectApplication.create!(introduction: "Olá quero participar",professional: professional, project: project, status: 10, updated_at: 2.days.ago)
 
@@ -173,6 +170,7 @@ describe 'professional requests a project' do
       expect(page).to_not have_content("Sua candidatura foi aceita!")
       expect(page).to have_content("Você cancelou essa aplicação com a justificativa de: Não quero mais")
     end
+
     it "and cancel application if it's been accepted in less than 3 days" do 
       professional = Professional.create!(email: 'pro@fissional.com.br', password: '123456')
 
@@ -193,10 +191,8 @@ describe 'professional requests a project' do
       fill_in 'Descrição', with: 'Olá essa é minha descriçao'
       fill_in 'Formação', with: 'Olá essa é minha formação'
       fill_in 'Experiência em anos', with: '2'
-      attach_file('Foto', "#{Rails.root}/spec/fixtures/picture.jpg")
 
       project_application = ProjectApplication.create!(introduction: "Olá quero participar",professional: professional, project: project, status: 10, updated_at: 4.days.ago)
-
       visit project_applications_path
      
 

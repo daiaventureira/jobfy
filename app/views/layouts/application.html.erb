@@ -30,13 +30,13 @@
                   </li>
                 <% elsif professional_signed_in? && current_professional.profile %>
                   <li class="nav-item">
-                    <p><%=link_to current_professional.email, professional_profile_path(current_professional, current_professional.id), class:"nav-link disabled" %><p>
-                  </li>
+                    <p><%=link_to current_professional.email, professional_profile_path(:id,current_professional.id), class:"nav-link disabled"%></p>
+                  </li> 
                   <li class="nav-item">
                     <p><%= link_to 'Ver aplicações', project_applications_path, class:"nav-link active"%></p> 
                   </li>
                   <li class="nav-item">
-                    <p><%= link_to 'Veja seu perfil', professional_profile_path(current_professional, current_professional.profile.id), class:"nav-link active" %></p>
+                    <p><%= link_to 'Veja seu perfil', professional_profile_path(current_professional.id, current_professional.profile.id), class:"nav-link active" %></p>
                   </li>
                   <li class="nav_item">
                     <p><%= link_to 'Ver projetos disponíveis', projects_path, class:"nav-link active" %></p>

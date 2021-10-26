@@ -1,6 +1,5 @@
 class ProjectApplicationsController < ApplicationController 
-  helper_method :is_current_professional_id_and_professioanl_signed_in_the_same?
-
+  before_action :authenticate_professional!, only: [:show]
   def index 
     @project_application = ProjectApplication.all
   end
@@ -26,8 +25,6 @@ class ProjectApplicationsController < ApplicationController
     @project_application = ProjectApplication.find(params[:id])
       if @project_application.update(project_application_params)
           redirect_to project_applications_path
-      else
-        render :new
       end
   end
 
