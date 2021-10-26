@@ -13,7 +13,7 @@ describe 'Professional signs up' do
     
     click_on 'Sign up'
     
-    expect(page).to have_content('Welcome! You have signed up successfully.')
+    expect(page).to have_content("Login efetuado com sucesso. Se não foi autorizado, a confirmação será enviada por e-mail.")
     expect(page).to have_content('professional@p.com.br')
     expect(page).to have_link('Logout')
     expect(page).to_not have_link('Entrar como profissional')
@@ -30,7 +30,7 @@ describe 'Professional signs up' do
       
     click_on 'Log in'
     
-    expect(page).to have_content('Signed in successfully.')
+    expect(page).to have_content("Login efetuado com sucesso!")
     expect(page).to have_content('professional@p.com.br')
     expect(page).to have_link('Logout')
     expect(page).to_not have_link('Entrar como profissional')
@@ -38,14 +38,13 @@ describe 'Professional signs up' do
 
   it 'and logs out' do  
     professional = Professional.create!(email: 'professional@p.com.br', password: '123456')
-
     login_as professional, scope: :professional
 
     visit projects_path
 
     click_on "Logout"
 
-    expect(page).to have_content("Signed out successfully.")
+    expect(page).to have_content("Saiu com sucesso.")
     expect(page).to_not have_current_path("/projects")
     expect(page).to have_current_path("/")
   end
@@ -62,12 +61,11 @@ describe 'Professional signs up' do
     
     click_on 'Sign up'
     
-    expect(page).to have_content('Password is too short (minimum is 6 characters)')
+    expect(page).to have_content("Password é muito curto (mínimo: 6 caracteres)")
   end
   
   it "professional gets error if not have an account" do 
     visit root_path
-    
     click_on "Entrar como profissional"   
 
     fill_in 'Email', with: 'professional@p.com.br'
@@ -75,6 +73,6 @@ describe 'Professional signs up' do
 
     click_on 'Log in'
     
-    expect(page).to have_content('Invalid Email or password')
+    expect(page).to have_content("Email ou senha inválida.")
   end
 end

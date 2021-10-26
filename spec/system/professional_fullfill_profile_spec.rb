@@ -57,7 +57,7 @@ describe 'Professional fill profile when authenticated' do
     click_on "Atualizar"
     
     expect(page).to have_button("Atualizar")
-    expect(page).to have_content('Verifique se os campos atualizados estão devidamente preenchidos')
+    # expect(page).to have_content('Verifique se os campos atualizados estão devidamente preenchidos')
   end
 
   it "and navigate successfully" do
@@ -89,18 +89,6 @@ describe 'Professional fill profile when authenticated' do
     expect(page).to have_content('Olá Jo :)')
   end
 
-  # it 'and should return error when update wrongly' do
-  #   prof= Professional.create!(email: 'profile@professional.com.br', password: '123456')
-  #   b_date = 30.years.ago
-    
-  #   profile = Profile.new(full_name: 'Isa', birth_date: b_date, description: "oi eu sou a iza", educational_background: "Artes", experience: '2', professional: prof)
-  #   login_as prof, scope: :professional
-
-  #   visit root_path
-
-  #   expect(page).to have_content("Olá Isa :)")
-  # end
-
   it "and get an error when age is lesser than 18 years" do 
     professional = Professional.create!(email: 'user@user.com.br', password: '123456')
     date = 3.years.ago
@@ -126,7 +114,8 @@ describe 'Professional fill profile when authenticated' do
 
     click_on "Criar"
 
-    expect(page).to have_content('Verifique se os campos estão devidamente preenchidos')
-  end
+    # expect(page).to have_content('Verifique se os campos estão devidamente preenchidos')
+    expect(page).to_not have_current_path("/")
+    end
 end
 

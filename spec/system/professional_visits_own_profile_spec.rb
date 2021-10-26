@@ -41,7 +41,6 @@ describe 'Professional visits own profile' do
     fill_in 'Experiência em anos', with: '2'
 
     click_on "Criar"  
-
     click_on 'Veja seu perfil'
 
     fill_in 'Nome completo', with: 'Luana'

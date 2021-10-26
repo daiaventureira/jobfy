@@ -1,3 +1,10 @@
+    <% if @project_application.project.errors.any? %>
+        <ul>
+          <% @project_application.project.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+      </ul>
+<% end %>
 <% if user_signed_in? %>
   <h1>Aplicações para o projeto <%= @project_application.project.title%></h1>
   <dl>

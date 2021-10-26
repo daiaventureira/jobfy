@@ -1,5 +1,7 @@
 class ProjectApplicationsController < ApplicationController 
-  before_action :authenticate_professional!, only: [:show]
+  before_action :authenticate_professional!, only: %i[show create destroy]
+  before_action :authenticate_user!, only: %i[accept reject]
+
   def index 
     @project_application = ProjectApplication.all
   end
@@ -12,9 +14,13 @@ class ProjectApplicationsController < ApplicationController
   def create 
     @project_application = current_professional.project_applications.new(project_application_params)
     @project_application.project = Project.find(params[:project_id])
-    @project_application.save
-    flash[:notice] = 'Você se candidatou para fazer parte desse projeto com sucesso!'
-    redirect_to @project_application
+    if @project_application.save
+      flash[:notice] = 'Você se candidatou para fazer parte desse projeto com sucesso!'
+      redirect_to @project_application
+    else  
+      flash[:alert] = "Deve ter introdução"
+      render :show
+    end
   end
 
   def edit 

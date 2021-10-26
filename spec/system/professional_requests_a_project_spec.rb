@@ -173,13 +173,9 @@ describe 'professional requests a project' do
 
     it "and cancel application if it's been accepted in less than 3 days" do 
       professional = Professional.create!(email: 'pro@fissional.com.br', password: '123456')
-
       user = User.create!(email: 'user@user.com.br', password: '123456')
-
       project = Project.create!(title: 'Website', description: 'descricao', skills: 'skills', price_per_hour: 'R$ 90,00', deadline: 2.days.from_now, remote: true, user: user )
-
       login_as professional, scope: :professional
-
       date = '27/04/1997'
 
       visit root_path 

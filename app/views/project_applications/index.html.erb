@@ -1,4 +1,5 @@
 <% @project_application.each do |p|%>
+   
    <% if p.project.closed? && p.rejected? || p.project.closed? && p.pending?%>
    <%elsif professional_signed_in? && current_professional.id == p.professional_id%>
         <div>
@@ -35,11 +36,11 @@
                 <dt>Introdução</dt>
                 <h6 clas="card-subtitle"><%= p.introduction%></h6>
                 <dt>Nome do profissional:</dt>
-                <% if p.professional.profile.social_name && p.professional.profile.social_name.length > 0 %>
-                  <h6 class="card-text"> <%= p.professional.profile.social_name %></h6>
-                <% else %>
+                <%# <% if !p.professional.profile.social_name && p.professional.profile.social_name.length > 0 %> 
+                  <%# <h6 class="card-text"> <%= p.professional.profile.social_name %></h6> 
+                <%# <% else %> 
                     <h6 class="card-text"> <%= p.professional.profile.full_name %></h6>
-                <% end %>
+                <%# <% end %> 
                 <dt>Mande um email para contatar o profissional:</dt>
                 <h6 class="card-text"> <%=mail_to p.professional.email%></h6>
                 <dt>Data de nascimento:</dt>

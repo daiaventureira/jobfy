@@ -13,16 +13,16 @@ describe 'User access account' do
 
         click_on 'Sign up'
 
-        expect(page).to have_content('Welcome! You have signed up successfully.')
+        expect(page).to have_content("Login efetuado com sucesso. Se não foi autorizado, a confirmação será enviada por e-mail.")
         expect(page).to have_content('daiane@souza.com.br')
         expect(page).to have_link('Logout')
         expect(page).to_not have_link('Entrar')
     end
+    
     it "and logs in" do 
         user = User.create!(email: 'daiane@souza.com.br', password: '123456')
 
         visit root_path 
-
         click_on "Entrar como usuário"
 
         fill_in "Email", with: user.email 
@@ -30,7 +30,7 @@ describe 'User access account' do
 
         click_on 'Log in'
 
-        expect(page).to have_content( "Signed in successfully")
+        expect(page).to have_content("Login efetuado com sucesso!")
         expect(page).to have_content(user.email)
         expect(page).to have_link('Logout')
         expect(page).to_not have_link('Entrar')
@@ -41,10 +41,9 @@ describe 'User access account' do
 
         login_as user, scope: :user
         visit root_path
-
         click_on 'Logout'
 
-        expect(page).to have_content('Signed out successfully.')
+        expect(page).to have_content("Entrar como usuário Entrar como profissional")
         expect(page).to_not have_content(user.email)
         expect(page).to_not have_link('Logout')
         expect(page).to have_link('Entrar')

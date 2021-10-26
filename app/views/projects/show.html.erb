@@ -1,3 +1,10 @@
+     <% if @projects.errors.any? %>
+      <ul>
+        <% @projects.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
     <% if professional_signed_in? %>
       <div>Descrição <%= @projects.description%></div>
       <div>Habilidades <%= @projects.skills%></div>
@@ -21,11 +28,11 @@
                   <%= f.text_field :introduction %>
                 </div>
                 <div><%=f.submit 'Candidatar-se'%></div>
-          <% end %>
-      <% end %>
+        <% end %>
+ <% end %>
       <% else %>
       <p>You don't have permission to access this route</p>
-  <% end %>
+   <% end %>
 
 
 

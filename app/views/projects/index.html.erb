@@ -1,6 +1,13 @@
 <% if professional_signed_in? %>
   <div class="row">
     <% @projects.each do |p| %>
+      <% if p.errors.any? %>
+        <ul>
+          <% p.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+      </ul>
+<% end %>
       <%if p.active?%>
         <div class="col-sm-6 mb-3">
           <div class="card">

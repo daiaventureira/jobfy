@@ -9,7 +9,7 @@ class Profile < ApplicationRecord
     if birth_date? && birth_date > 18.years.ago
       return errors.add :birth_date, 'Profissional deve ter no mínimo 18 anos'
     elsif !birth_date
-      return errors.add :birth_date, 'Campo data de nascimento deve ser preenchido'
+       errors.add(:birth_date, 'Campo data de nascimento deve ser preenchido')
     end 
   end
 end 

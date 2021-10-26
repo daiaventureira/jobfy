@@ -1,10 +1,12 @@
 class ProjectsController < ApplicationController 
+    before_action :authenticate_professional!, only: %i[show index professional_has_applied?]
+    before_action :authenticate_user!, only: %i[new close]
+
     helper_method :professional_has_applied?
 
     def index 
         @projects = Project.all
     end
-
 
     def new 
         @projects = Project.new

@@ -1,7 +1,4 @@
-
-<% if professional_signed_in? && !current_professional.profile %>
   <%= form_with model: [@professional, @profile] do |f| %>
-    <%= render partial: "shared/form_errors", form: f %>
    <div>
       <%= f.label :full_name, 'Nome completo' %>
       <%= f.text_field :full_name %>
@@ -29,4 +26,3 @@
     </div>
     <%= f.submit 'Criar' %>
   <% end %>
-<% end %>
