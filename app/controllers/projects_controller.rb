@@ -1,8 +1,10 @@
 class ProjectsController < ApplicationController 
     before_action :authenticate_professional!, only: %i[show index]
     before_action :authenticate_user!, only: %i[new close create]
-
+    
     helper_method :professional_has_applied?
+    helper_method :exceed_deadline?
+
 
     def index 
         @projects = Project.all
@@ -35,6 +37,10 @@ class ProjectsController < ApplicationController
 
     def professional_has_applied?
         professional_signed_in? && current_professional.projects.where(id: @projects.id).present?
+    end
+
+    def exceed_deadline?
+        deadline < Time.now?
     end
 
     private

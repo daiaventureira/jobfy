@@ -1,19 +1,19 @@
   <% @project_application.each do |p|%>
-  <% if f.object.errors.any? %>
+  <% if p.errors.any? %>
     <div class="btn btn-danger">
-      <% f.object.errors.full_messages.each do |message|%>
+      <% p.errors.full_messages.each do |message| %>
         <div><%= message %></div>
       <% end %>
     </div>
   <% end %>
   <% if p.project.closed? && p.rejected? || p.project.closed? && p.pending?%>
-  <%elsif is_current_professional_signed_in(p)%>
+  <%elsif is_current_professional_signed_in(p) %>
     <div>
       <p>Projeto: <%= p.project.title%></p>
       <p>Introdução <%= p.introduction%></p>
     </div>
   <% end %>
-  <% if  is_current_professional_signed_in(p) && p.reason%>
+  <% if is_current_professional_signed_in(p) && p.reason%>
     <p class="alert alert-primary" role="alert">Você cancelou essa aplicação com a justificativa de: <%= p.reason%></p>
   <% elsif is_current_professional_signed_in(p) && p.pending? && p.project.active? %>
     <p class="alert alert-primary" role="alert">Sua candidatura está pendente</p>

@@ -14,14 +14,22 @@ class ProjectApplicationsController < ApplicationController
   end
   
   def create 
-    @project_application = current_professional.project_applications.new(project_application_params)
-    @project_application.project = Project.find(params[:project_id])
-    if @project_application.save
-      flash[:notice] = 'Você se candidatou para fazer parte desse projeto com sucesso!'
-      redirect_to @project_application
-    else  
-      flash[:alert] = "Deve ter introdução"
-      render :show
+    if current_professional.project_applications.exists?(id: params[:project_id])
+      flash[:alert] = "Já existe"
+      redirect_to @project_application.project
+    else 
+      @project_application = current_professional.project_applications.new(project_application_params)
+      @project_application.project = Project.find(params[:project_id]) 
+      if @project_application.project.closed?
+        flash[:alert] = "Esse projeto está fechado!"
+        redirect_to @project_application.project
+      elsif @project_application.save
+        flash[:notice] = 'Você se candidatou para fazer parte desse projeto com sucesso!'
+        redirect_to @project_application
+      else  
+        flash[:alert] = "Deve ter introdução"
+        redirect_to @project_application.project
+      end
     end
   end
 

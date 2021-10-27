@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :professionals 
   resources :professionals, only: %i[show] do 
-    resources :profiles, only: %i[create show index]
+    resources :profiles, only: %i[ create show index]
   end
 
   devise_for :users

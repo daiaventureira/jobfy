@@ -3,10 +3,11 @@ class Professional < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
   
   has_one :profile
   has_many :project_applications
   has_many :projects, through: :project_applications
-
+  
 end
+
+

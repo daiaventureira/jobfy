@@ -18,9 +18,9 @@
     <% end %>
   </div>
   <div>Data final de aplicação <%= @projects.deadline%></div>
-  <% if professional_has_applied? %>
+  <% if  professional_has_applied? %>
     <p>Você já se candidatou! Acompanhe suas aplicações. Em breve terá uma resposta.</p>
-  <% else %>
+  <% elsif !@projects.closed? %>
     <%= form_with model:[@projects, @project_application] do |f| %>
       <div>
         <%= f.label :introduction, "Introdução" %>

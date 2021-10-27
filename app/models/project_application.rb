@@ -7,6 +7,10 @@ class ProjectApplication < ApplicationRecord
   
   enum status: {pending: 5, accepted: 10, rejected: 15}
 
+  # def is_current_professional_signed_in(current_professional, p)
+  #   current_professional== p.professional_id
+  # end
+
   def professional_social_name_exists(p) 
     if p.professional.profile.social_name?
     elsif !p.professional.profile.social_name?
