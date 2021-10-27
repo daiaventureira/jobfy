@@ -61,10 +61,12 @@ describe 'Professional fill profile when authenticated' do
     click_on 'Veja seu perfil'
 
     fill_in 'Nome completo', with: nil
-  
+    fill_in 'Data de nascimento', with: nil
     click_on "Atualizar"
-    
-    expect(page).to have_content("Verifique se os campos atualizados estão devidamente preenchidos")
+
+    expect(page).to have_content("Data de nascimento deve ser preenchido")
+    expect(page).to have_content("Data de nascimento não pode ficar em branco")
+    expect(page).to have_content("Nome completo não pode ficar em branco")
     expect(page).to_not have_content("Olá Isa Manueli :)")
   end
 
@@ -118,11 +120,11 @@ describe 'Professional fill profile when authenticated' do
     fill_in 'Data de nascimento', with: birth_date
     fill_in 'Descrição', with: 'Olá essa é minha descriçao'
     fill_in 'Formação', with: 'Olá essa é minha formação'
-    fill_in 'Experiência em anos', with: '2'
 
     click_on "Criar"
 
-    expect(page).to have_content('Verifique se os campos estão devidamente preenchidos')
+    expect(page).to have_content('Data de nascimento deve corresponder a um profissional de 18 anos ou mais.')
+    expect(page).to have_content('Experiência não pode ficar em branco')
     expect(page).to_not have_current_path("/")
     end
 end

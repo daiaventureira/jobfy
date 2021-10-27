@@ -1,6 +1,10 @@
-<%= form_with model:[@projects, @project_application] do |f| %>
-  <%= @project_application.errors.full_messages_for(:projects).each do |message| %>
-    <div><%= message %></div>
+<%= form_with model:[@projects, @project_application], local: true do |f| %>
+  <% if f.object.errors.any? %>
+    <div class="btn btn-danger">
+      <% f.object.errors.full_messages.each do |message|%>
+        <div><%= message %></div>
+      <% end %>
+    </div>
   <% end %>
   <div>
     <%= f.label :reason, "Justificativa" %>

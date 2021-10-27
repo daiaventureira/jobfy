@@ -9,7 +9,6 @@ class ProjectApplication < ApplicationRecord
 
   def professional_social_name_exists(p) 
     if p.professional.profile.social_name?
-      return true
     elsif !p.professional.profile.social_name?
       false
     end 

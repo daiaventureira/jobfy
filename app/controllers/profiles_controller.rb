@@ -2,9 +2,13 @@ class ProfilesController < ApplicationController
   before_action :authenticate_professional!, only: %i[show create update]
   helper_method :is_current_professional_profile?
 
+  # def new  
+  #   @profile = Profile.new
+  # end
   def show
     @profile = Profile.find(params[:id])
   end
+ 
 
   def create
     @profile = Profile.new(profile_params)
@@ -12,8 +16,7 @@ class ProfilesController < ApplicationController
     if  @profile.save
       redirect_to root_path
     else 
-      flash[:alert] = "Verifique se os campos estão devidamente preenchidos"
-      redirect_to @profile.professional
+      render :new
     end
   end
 
@@ -22,12 +25,9 @@ class ProfilesController < ApplicationController
       if @profile.update(profile_params)
         redirect_to root_path
       else
-        flash[:alert] = "Verifique se os campos atualizados estão devidamente preenchidos"
         render :show
       end
   end
-
-  
 
   private 
 
