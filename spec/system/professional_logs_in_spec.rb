@@ -49,7 +49,7 @@ describe 'Professional signs up' do
     expect(page).to have_current_path("/")
   end
 
-  it "professional gets error if not authenticated" do 
+  it "professional gets error if password is wrong" do 
     visit root_path
     
     click_on "Entrar como profissional"
@@ -64,7 +64,7 @@ describe 'Professional signs up' do
     expect(page).to have_content("Password é muito curto (mínimo: 6 caracteres)")
   end
   
-  it "professional gets error if not have an account" do 
+  it "professional gets error if do not have an account" do 
     visit root_path
     click_on "Entrar como profissional"   
 

@@ -1,5 +1,13 @@
 <% if professional_signed_in? %>
+  <% if @profile.professional.errors.any? %>
+    <div class="btn btn-danger">
+      <% @profile.professional.errors.full_messages.each do |message|%>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end  %>
   <%= form_with model: [@professional, @profile] do |f| %>
+    <%= render partial: "./shared/flash" %>
     <div class="row mb-3">
       <div>
         <%= f.label :full_name, 'Nome completo', class:"col-sm-2 col-form-label mt-3" %>

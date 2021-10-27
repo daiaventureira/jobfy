@@ -1,0 +1,8 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      project_application: "Aplicações do projeto"
+    attributes:
+      project_application:
+        introduction: "Introdução"

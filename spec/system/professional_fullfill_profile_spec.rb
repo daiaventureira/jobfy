@@ -38,26 +38,34 @@ describe 'Professional fill profile when authenticated' do
     expect(page).to_not have_link('Veja seu perfil')
   end
 
-  it "and get error if not properly update profile" do 
-    professional = Professional.create!(email: 'user@user.com.br', password: '123456')
-    birth_date = 18.years.ago
-    profile = Profile.create!(full_name: 'Daiane', birth_date: birth_date, description: 'Descricap', educational_background: 'Art', experience: '2', professional: professional)
-
+  it "and should return social name if it exists" do 
+    professional = Professional.create!(email: 'uer@user.com.br', password: '123456')
+    b_day = 30.years.ago
+    profile = Profile.create!(full_name: 'Isa Manueli', birth_date: b_day, social_name: 'Jo', description: "oi eu sou a iza", educational_background: "Artes", experience: '2', professional: professional)
     login_as professional, scope: :professional 
+
+    visit root_path
+    
+    expect(page).to have_content("Olá Jo :)")
+    expect(page).to_not have_content("Olá Isa Manueli :)")
+
+  end
+
+  it "and get error if not properly update profile" do 
+    professional = Professional.create!(email: 'uer@user.com.br', password: '123456')
+    b_day = 30.years.ago
+    profile = Profile.create!(full_name: 'Isa Manueli', birth_date: b_day, description: "oi eu sou a iza", educational_background: "Artes", experience: '2', professional: professional)
+    login_as professional, scope: :professional 
+
     visit root_path
     click_on 'Veja seu perfil'
 
-    fill_in 'Nome completo', with: 'Joao'
-    fill_in 'Nome social', with: 'Jo'
-    fill_in 'Data de nascimento', with: birth_date
-    fill_in 'Descrição', with: 'Olá essa é minha descriçao'
-    fill_in 'Formação', with: 'Olá essa é minha formação'
-    fill_in 'Experiência', with: ""
-
+    fill_in 'Nome completo', with: nil
+  
     click_on "Atualizar"
     
-    expect(page).to have_button("Atualizar")
-    # expect(page).to have_content('Verifique se os campos atualizados estão devidamente preenchidos')
+    expect(page).to have_content("Verifique se os campos atualizados estão devidamente preenchidos")
+    expect(page).to_not have_content("Olá Isa Manueli :)")
   end
 
   it "and navigate successfully" do
@@ -97,7 +105,7 @@ describe 'Professional fill profile when authenticated' do
     expect(profile.valid?).to eq false
   end
   
-  it "and return message error when field are not properly fullfilled" do 
+  it "and return message error when fields are not properly fullfilled" do 
     professional = Professional.create!(email: 'pro@prof.com.br', password: '123456')
     birth_date = 4.years.ago 
 
@@ -114,7 +122,7 @@ describe 'Professional fill profile when authenticated' do
 
     click_on "Criar"
 
-    # expect(page).to have_content('Verifique se os campos estão devidamente preenchidos')
+    expect(page).to have_content('Verifique se os campos estão devidamente preenchidos')
     expect(page).to_not have_current_path("/")
     end
 end

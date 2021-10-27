@@ -1,7 +1,11 @@
-  <%= form_with model: [@professional, @profile] do |f| %>
-  <%= @professional.errors.full_messages_for(:profile).each do |message| %>
-    <div><%= message %></div>
-  <% end %>
+  <% if @profile.professional.errors.any? %>
+  <div class="btn btn-danger">
+    <% @profile.professional.errors.full_messages.each do |message|%>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+<% end  %>
+<%= form_with model: [@professional, @profile] do |f| %>
   <div>
     <%= f.label :full_name, 'Nome completo' %>
     <%= f.text_field :full_name %>
