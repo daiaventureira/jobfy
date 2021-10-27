@@ -1,5 +1,5 @@
   <%= form_with model: [@professional, @profile] do |f| %>
-  <%= @profile.errors.full_messages_for(:professional).each do |message| %>
+  <%= @professional.errors.full_messages_for(:profile).each do |message| %>
     <div><%= message %></div>
   <% end %>
   <div>

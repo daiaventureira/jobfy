@@ -123,30 +123,22 @@ describe "User creates project" do
 
   it "unsuccessfully" do 
     user = User.create!(email: 'user@user.com.br', password: '123456')
-
     login_as user, scope: :user 
 
     visit root_path
-    deadline = 2.days.from_now
     click_on "Adicionar projeto"
-
-    fill_in "Título:", with: "Projeto"
-    fill_in "Descrição:", with: "Descrição de um projeto"
-    fill_in "Habilidades:", with: "Habilidades de um profissional"
-    fill_in "Data limite:", with: deadline 
-
     click_on 'Adicionar'
     
     expect(page).to have_current_path('/projects')
-    expect(page).to_not have_content("Título: Projeto")
-    expect(page).to_not have_content("Descrição: Descrição de um projeto")
-    expect(page).to_not have_content("Habilidades: Habilidades de um profissional")
-    expect(page).to_not have_content("Data limite: #{deadline.strftime("%d/%m/%Y")}")
-    expect(page).to_not have_link("Encerrar inscrições")
+    expect(page).to have_content("Título não pode ficar em branco")
+    expect(page).to have_content("Descrição não pode ficar em branco")
+    expect(page).to have_content("Habilidades não pode ficar em branco")
+    expect(page).to have_content("Data limite não pode ficar em branco")
+    expect(page).to have_content("Preço por hora não pode ficar em branco")
+    expect(page).to have_content("Data limite deve ser maior que a data atual")
   end
 
   it 'and should not be valid' do 
-
       projeto = Project.new(title: 'Website', description: 'descricao', skills: 'skills', price_per_hour: 'R$ 90,00', deadline: 1.day.ago, remote: true )
 
       visit projects_path

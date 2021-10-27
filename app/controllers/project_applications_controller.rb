@@ -1,6 +1,8 @@
 class ProjectApplicationsController < ApplicationController 
   before_action :authenticate_professional!, only: %i[show create destroy update]
   before_action :authenticate_user!, only: %i[accept reject]
+  helper_method :is_current_professional_signed_in
+  helper_method :is_current_user_signed_in
 
   def index 
     @project_application = ProjectApplication.all
@@ -50,6 +52,14 @@ class ProjectApplicationsController < ApplicationController
     @project_application = ProjectApplication.find(params[:id])
     @project_application.destroy 
     redirect_to project_applications_path, notice: "Você cancelou uma proposta!"
+  end
+
+  def is_current_professional_signed_in(p)
+    professional_signed_in? && current_professional.id == p.professional_id
+  end
+
+  def is_current_user_signed_in(p)
+    user_signed_in? && current_user.id == p.project.user_id
   end
 
   private 
