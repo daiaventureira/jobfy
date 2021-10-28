@@ -81,7 +81,7 @@ Quando clicar em "Login", será redirecionado para a seguinte página:
 
 <img width="1201" alt="Screen Shot 2021-10-28 at 6 06 45 PM" src="https://user-images.githubusercontent.com/44145146/139342911-7659c230-47c8-468b-bd74-abe537fbb363.png">
 
-Se clicar em "Ver aplicações"o atual profissional verá a seguinte página:
+Se clicar em "Ver aplicações" o atual profissional verá a seguinte página:
 
 <img width="1201" alt="Screen Shot 2021-10-28 at 6 08 18 PM" src="https://user-images.githubusercontent.com/44145146/139343048-9be47fe0-9669-4aff-8ab7-50e7dd8f0d55.png">
 
