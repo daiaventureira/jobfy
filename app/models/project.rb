@@ -12,6 +12,10 @@ class Project < ApplicationRecord
         super || deadline < DateTime.current
     end
 
+    def is_owner?(user_id)
+        user.id == user_id
+    end
+
     private
 
     def deadline_application_lesser_than_current_day

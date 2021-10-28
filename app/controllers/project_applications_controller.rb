@@ -3,6 +3,7 @@ class ProjectApplicationsController < ApplicationController
   before_action :authenticate_user!, only: %i[accept reject] 
   before_action :authenticate, only: %i[index]
   before_action :professional_profile_exists
+  before_action :ensures_project_ownership_privileges, only: %i[accept reject]
 
   helper_method :is_current_professional_signed_in
   helper_method :is_current_user_signed_in
@@ -47,7 +48,7 @@ class ProjectApplicationsController < ApplicationController
       end
   end
 
-  def accept 
+  def accept
     @project_application = ProjectApplication.find(params[:id])
     @project_application.accepted!
     redirect_to project_applications_path, notice: "Você aceitou a proposta!"
@@ -70,7 +71,7 @@ class ProjectApplicationsController < ApplicationController
   end
 
   def is_current_user_signed_in(p)
-    user_signed_in? && current_user.id == p.project.user_id
+    user_signed_in? && p.project.is_owner?(current_user.id)
   end
 
   def professional_profile_exists
@@ -87,5 +88,11 @@ class ProjectApplicationsController < ApplicationController
 
   def project_application_params 
     params.require(:project_application).permit(:introduction, :reason)
+  end
+
+  def ensures_project_ownership_privileges
+    if !ProjectApplication.find(params[:id]).project.is_owner?(current_user.id)
+      redirect_to project_applications_path, notice: "Você não tem privilégios para executar essa ação!"
+    end
   end
 end 

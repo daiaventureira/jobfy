@@ -42,4 +42,15 @@ describe "Professional Authentication" do
 
     expect(response).to redirect_to(new_professional_session_path)
   end  
+
+  it "cannot reject applications" do
+    post  "/project_applications/1/reject"
+
+    expect(response).to redirect_to(new_user_session_path)
+  end
+  it "cannot reject applications" do
+    post  "/project_applications/1/accept"
+
+    expect(response).to redirect_to(new_user_session_path)
+  end
 end 
