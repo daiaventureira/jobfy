@@ -66,7 +66,7 @@ describe 'professional requests a project' do
       click_on "Website"
       click_on 'Candidatar-se'
 
-      expect(page).to have_content('Deve ter introdução')
+      expect(page).to have_content('Introdução não pode ficar em branco')
     end
 
     it "and application is pending" do 
