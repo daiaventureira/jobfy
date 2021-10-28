@@ -21,7 +21,6 @@ RSpec.describe Project, type: :model do
         closed = project.closed!
 
         expect(project).to be_closed
-
     end 
   end
 end
