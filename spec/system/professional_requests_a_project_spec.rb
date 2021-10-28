@@ -174,21 +174,13 @@ describe 'professional requests a project' do
       user = User.create!(email: 'user@user.com.br', password: '123456')
 
       project = Project.create!(title: 'Website', description: 'descricao', skills: 'skills', price_per_hour: 'R$ 90,00', deadline: 2.days.from_now, remote: true, user: user )
-
+      Profile.create!(full_name: "dai", birth_date: "27/04/2000", experience: "2", educational_background: "test", description: "oi", professional: professional)
       login_as professional, scope: :professional
 
       date = '27/04/1997'
 
       visit root_path 
-      click_on 'Crie'
-      
-      fill_in 'Nome completo', with: 'Daiane Souza'
-      fill_in 'Nome social', with: 'Dai'
-      fill_in 'Data de nascimento', with: date
-      fill_in 'Descrição', with: 'Olá essa é minha descriçao'
-      fill_in 'Formação', with: 'Olá essa é minha formação'
-      fill_in 'Experiência em anos', with: '2'
-
+  
       project_application = ProjectApplication.create!(introduction: "Olá quero participar",professional: professional, project: project, status: 10, updated_at: 2.days.ago)
 
       visit project_applications_path
@@ -204,23 +196,13 @@ describe 'professional requests a project' do
       professional = Professional.create!(email: 'pro@fissional.com.br', password: '123456')
       user = User.create!(email: 'user@user.com.br', password: '123456')
       project = Project.create!(title: 'Website', description: 'descricao', skills: 'skills', price_per_hour: 'R$ 90,00', deadline: 2.days.from_now, remote: true, user: user )
+      Profile.create!(full_name: "dai", birth_date: "27/04/2000", experience: "2", educational_background: "test", description: "oi", professional: professional)
+
       login_as professional, scope: :professional
       date = '27/04/1997'
-
-      visit root_path 
-      click_on 'Crie'
-      
-      fill_in 'Nome completo', with: 'Daiane Souza'
-      fill_in 'Nome social', with: 'Dai'
-      fill_in 'Data de nascimento', with: date
-      fill_in 'Descrição', with: 'Olá essa é minha descriçao'
-      fill_in 'Formação', with: 'Olá essa é minha formação'
-      fill_in 'Experiência em anos', with: '2'
-
       project_application = ProjectApplication.create!(introduction: "Olá quero participar",professional: professional, project: project, status: 10, updated_at: 4.days.ago)
       visit project_applications_path
      
-
       expect(page).to_not have_link("Cancele sua aplicação")
       expect(page).to have_content("Sua candidatura foi aceita!")
     end

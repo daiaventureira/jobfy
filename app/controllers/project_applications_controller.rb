@@ -1,6 +1,9 @@
 class ProjectApplicationsController < ApplicationController 
   before_action :authenticate_professional!, only: %i[show create destroy update]
-  before_action :authenticate_user!, only: %i[accept reject]
+  before_action :authenticate_user!, only: %i[accept reject] 
+  before_action :authenticate, only: %i[index]
+  before_action :professional_profile_exists
+
   helper_method :is_current_professional_signed_in
   helper_method :is_current_user_signed_in
 
@@ -27,7 +30,7 @@ class ProjectApplicationsController < ApplicationController
         flash[:notice] = 'Você se candidatou para fazer parte desse projeto com sucesso!'
         redirect_to @project_application
       else  
-        flash[:alert] = "Deve ter introdução"
+        flash[:alert] = @project_application.errors.full_messages.join("\n")
         redirect_to @project_application.project
       end
     end
@@ -70,7 +73,17 @@ class ProjectApplicationsController < ApplicationController
     user_signed_in? && current_user.id == p.project.user_id
   end
 
+  def professional_profile_exists
+    if professional_signed_in? && !current_professional.profile
+      redirect_to current_professional
+    end
+  end
+
   private 
+  
+  def authenticate
+    professional_signed_in? || user_signed_in?
+  end
 
   def project_application_params 
     params.require(:project_application).permit(:introduction, :reason)

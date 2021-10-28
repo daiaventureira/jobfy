@@ -6,7 +6,7 @@
       <% end %>
     </div>
   <% end %>
-  <% if p.project.closed? && p.rejected? || p.project.closed? && p.pending?%>
+  <% if p.project.closed? && (p.rejected? || p.pending?)%>
   <%elsif is_current_professional_signed_in(p) %>
     <div>
       <p>Projeto: <%= p.project.title%></p>

@@ -1,34 +1,30 @@
-     <% if @projects.errors.any? %>
+<% if @projects.errors.any? %>
   <ul>
     <% @projects.errors.full_messages.each do |error| %>
       <li><%= error %></li>
     <% end %>
   </ul>
 <% end %>
-<% if professional_signed_in? %>
-  <div>Descrição <%= @projects.description%></div>
-  <div>Habilidades <%= @projects.skills%></div>
-  <div>Preço por hora <%= number_to_currency(@projects.price_per_hour, unit: 'R$', separator: ',', format: '%u %n')%></div>
-  <div>
-    <dt>Local de atuação:</dt>
-    <% if @projects.remote? %>
-      <dd>Remoto</dd>
-    <% else %>
-      <dd>Presencial</dd>
-    <% end %>
-  </div>
-  <div>Data final de aplicação <%= @projects.deadline%></div>
-  <% if  professional_has_applied? %>
-    <p>Você já se candidatou! Acompanhe suas aplicações. Em breve terá uma resposta.</p>
-  <% elsif !@projects.closed? %>
-    <%= form_with model:[@projects, @project_application] do |f| %>
-      <div>
-        <%= f.label :introduction, "Introdução" %>
-        <%= f.text_field :introduction %>
-      </div>
-      <div><%=f.submit 'Candidatar-se'%></div>
-    <% end %>
+<div>Descrição <%= @projects.description%></div>
+<div>Habilidades <%= @projects.skills%></div>
+<div>Preço por hora <%= number_to_currency(@projects.price_per_hour, unit: 'R$', separator: ',', format: '%u %n')%></div>
+<div>
+  <dt>Local de atuação:</dt>
+  <% if @projects.remote? %>
+    <dd>Remoto</dd>
+  <% else %>
+    <dd>Presencial</dd>
   <% end %>
-<% else %>
-  <p>You don't have permission to access this route</p>
+</div>
+<div>Data final de aplicação <%= @projects.deadline%></div>
+<% if  professional_has_applied? %>
+  <p>Você já se candidatou! Acompanhe suas aplicações. Em breve terá uma resposta.</p>
+<% elsif !@projects.closed? %>
+  <%= form_with model:[@projects, @project_application] do |f| %>
+    <div>
+      <%= f.label :introduction, "Introdução" %>
+      <%= f.text_field :introduction %>
+    </div>
+    <div><%=f.submit 'Candidatar-se'%></div>
+  <% end %>
 <% end %>

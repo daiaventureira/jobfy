@@ -1,29 +1,26 @@
-<% if professional_signed_in? %>
-  <div class="row">
-    <% @projects.each do |p| %>
-      <% if p.errors.any? %>
-        <ul>
-          <% p.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
-      <% end %>
+ 
+<div class="row">
+  <% @projects.each do |p| %>
+    <% if p.errors.any? %>
+      <ul>
+        <% p.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
       </ul>
-<% end %>
-      <%if p.active?%>
-        <div class="col-sm-6 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">
-                <%=link_to(p.title, p ) %>
-              </h5>
-                <p class="card-text">
-                  <%= p.description%>
-              </p>
-            </div>
+    <% end %>
+    <%if p.active?%>
+      <div class="col-sm-6 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%=link_to(p.title, p ) %>
+            </h5>
+            <p class="card-text">
+              <%= p.description%>
+            </p>
           </div>
         </div>
-      <% end %>
-    <%end%>
-  </div>
-  <% else %>
-    <p>You don't have permission to access this route</p>
-<% end %>
+      </div>
+    <% end %>
+  <%end%>
+</div>
