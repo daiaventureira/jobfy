@@ -94,8 +94,7 @@ Em "Ver projetos disponíveis" há uma lista de projetos disponíveis para o pro
 <img width="1201" alt="Screen Shot 2021-10-28 at 6 10 28 PM" src="https://user-images.githubusercontent.com/44145146/139343230-352c4766-07f4-4b51-9225-86041c6a81e5.png">
 
 Clicando no título o profissional poderá ver a descrição do projeto, bem como outras informações e se candidatar caso não tenha se candidatado:
-
-<img width="1201" alt="Screen Shot 2021-10-28 at 6 12 23 PM" src="https://user-images.githubusercontent.com/44145146/139343390-1127d94e-e9b1-499d-b049-4357b1d45c95.png">
+<img width="1201" alt="Screen Shot 2021-10-28 at 6 32 28 PM" src="https://user-images.githubusercontent.com/44145146/139345289-9e7067b8-80a9-413c-91f6-029c176a12aa.png">
 
 
 ## Informações
