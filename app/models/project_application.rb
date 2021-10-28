@@ -8,8 +8,8 @@ class ProjectApplication < ApplicationRecord
   enum status: {pending: 5, accepted: 10, rejected: 15}
 
   def professional_social_name_exists(p)
-    if p.professional.profile.social_name?
-    elsif !p.professional.profile.social_name?
+    if professional.profile && professional.profile.social_name?
+    elsif !professional.profile || !p.professional.profile.social_name
       false
     end 
   end

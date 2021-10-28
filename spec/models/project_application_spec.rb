@@ -4,7 +4,7 @@ RSpec.describe ProjectApplication, type: :model do
   it "project rejected by user " do 
     user = User.create!(email: 'asdf@nha.com.br', password: '123456')
     project = Project.create!(title: "Test", skills: "testing", description: "description", price_per_hour: '230', deadline: DateTime.tomorrow, user: user)
-    b_date = 18.days.ago
+    b_date = 18.years.ago
     professional = Professional.create!(email: "pro@pro2.com.br", password: "123456")
     Profile.new(full_name: 'Daiane Souza', description: "hello", birth_date: b_date, educational_background: 'arts', experience: '2', professional: professional)
     project_application = ProjectApplication.new(introduction: 'Hello', professional: professional, project: project)
@@ -17,7 +17,7 @@ RSpec.describe ProjectApplication, type: :model do
   it "project pending" do 
     user = User.create!(email: 'asdf@nha.com.br', password: '123456')
     project = Project.create!(title: "Test", skills: "testing", description: "description", price_per_hour: '230', deadline: DateTime.tomorrow, user: user)
-    b_date = 18.days.ago
+    b_date = 18.years.ago
     professional = Professional.create!(email: "pro@pro2.com.br", password: "123456")
     Profile.new(full_name: 'Daiane Souza', description: "hello", birth_date: b_date, educational_background: 'arts', experience: '2', professional: professional)
     project_application = ProjectApplication.new(introduction: 'Hello', professional: professional, project: project)
