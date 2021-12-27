@@ -7,13 +7,16 @@ class Project < ApplicationRecord
 
     enum status: {active: 20, closed: 25}
 
-
     def closed?
         super || deadline < DateTime.current
     end
 
     def is_owner?(user_id)
         user.id == user_id
+    end
+
+    def exceed_deadline?
+        deadline < Time.now
     end
 
     private

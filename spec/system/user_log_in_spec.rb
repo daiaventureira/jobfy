@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe 'User access account' do
-    it 'successfully' do     
+    it 'successfully' do
         visit root_path
-    
+
         click_on 'Entrar como usuário'
         click_on 'Sign up'
 

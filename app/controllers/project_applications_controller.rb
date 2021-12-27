@@ -1,6 +1,6 @@
-class ProjectApplicationsController < ApplicationController 
+class ProjectApplicationsController < ApplicationController
   before_action :authenticate_professional!, only: %i[show create destroy update]
-  before_action :authenticate_user!, only: %i[accept reject] 
+  before_action :authenticate_user!, only: %i[accept reject]
   before_action :authenticate, only: %i[index]
   before_action :professional_profile_exists
   before_action :ensures_project_ownership_privileges, only: %i[accept reject]
@@ -8,20 +8,20 @@ class ProjectApplicationsController < ApplicationController
   helper_method :is_current_professional_signed_in
   helper_method :is_current_user_signed_in
 
-  def index 
+  def index
     @project_application = ProjectApplication.all
   end
 
-  def show 
+  def show
     @project_application = ProjectApplication.find(params[:id])
     @project_application_show = ProjectApplication.where(professional_id: current_professional)
   end
-  
-  def create 
+
+  def create
     if current_professional.project_applications.exists?(id: params[:project_id])
       flash[:alert] = "Já existe"
       redirect_to @project_application.project
-    else 
+    else
       @project_application = current_professional.project_applications.new(project_application_params)
       @project_application.project = Project.find(params[:project_id]) 
       if @project_application.project.closed?
@@ -30,14 +30,14 @@ class ProjectApplicationsController < ApplicationController
       elsif @project_application.save
         flash[:notice] = 'Você se candidatou para fazer parte desse projeto com sucesso!'
         redirect_to @project_application
-      else  
+      else
         flash[:alert] = @project_application.errors.full_messages.join("\n")
         redirect_to @project_application.project
       end
     end
   end
 
-  def edit 
+  def edit
       @project_application = ProjectApplication.find(params[:id])
   end
 
@@ -54,15 +54,15 @@ class ProjectApplicationsController < ApplicationController
     redirect_to project_applications_path, notice: "Você aceitou a proposta!"
   end
 
-  def reject 
+  def reject
     @project_application = ProjectApplication.find(params[:id])
     @project_application.rejected!
     redirect_to project_applications_path, notice: "Você recusou a proposta!"
   end
 
-  def destroy 
+  def destroy
     @project_application = ProjectApplication.find(params[:id])
-    @project_application.destroy 
+    @project_application.destroy
     redirect_to project_applications_path, notice: "Você cancelou uma proposta!"
   end
 
@@ -80,13 +80,13 @@ class ProjectApplicationsController < ApplicationController
     end
   end
 
-  private 
-  
+  private
+
   def authenticate
     professional_signed_in? || user_signed_in?
   end
 
-  def project_application_params 
+  def project_application_params
     params.require(:project_application).permit(:introduction, :reason)
   end
 
@@ -95,4 +95,4 @@ class ProjectApplicationsController < ApplicationController
       redirect_to project_applications_path, notice: "Você não tem privilégios para executar essa ação!"
     end
   end
-end 
+end

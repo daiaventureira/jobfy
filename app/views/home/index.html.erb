@@ -1,7 +1,7 @@
 <h1 class="mb-3 mt-3">Jobfy
   <h1>
     <% if professional_signed_in? && current_professional.profile %>
-      <h4 class="font-monospace mt-3 mb-3 lh-lg">Olá 
+      <h4 class="font-monospace mt-3 mb-3 lh-lg">Olá
         <% if current_professional.profile.social_name && current_professional.profile.social_name.length > 0%>
           <%= current_professional.profile.social_name%>
         <% else %>
@@ -30,10 +30,10 @@
                   <% end %>
                 </p>
                 <p class="card-text">Data limite: <%= p.deadline.strftime("%d/%m/%Y") %></p>
-                <% if p.active? %>
+                <% if p.active? && !p.exceed_deadline? %>
                   <%= link_to "Encerrar inscrições", close_project_path(current_user, p.id), method: :post, class:"btn btn-primary" %>
                 <% elsif p.closed?%>
-                  <%= link_to "Encerradas","#", class:"btn btn-success"%>
+                  <%= link_to "Inscrições encerradas","#", class:"btn btn-success"%>
                 <% end %>
               </div>
             </div>

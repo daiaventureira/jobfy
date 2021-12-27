@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ProjectApplication, type: :model do
-  it "project rejected by user " do 
+  it "project rejected by user " do
     user = User.create!(email: 'asdf@nha.com.br', password: '123456')
     project = Project.create!(title: "Test", skills: "testing", description: "description", price_per_hour: '230', deadline: DateTime.tomorrow, user: user)
     b_date = 18.years.ago
@@ -12,9 +12,9 @@ RSpec.describe ProjectApplication, type: :model do
     reject = project_application.rejected!
 
     expect(project_application).to be_rejected
-  end 
+  en
 
-  it "project pending" do 
+  it "project pending" do
     user = User.create!(email: 'asdf@nha.com.br', password: '123456')
     project = Project.create!(title: "Test", skills: "testing", description: "description", price_per_hour: '230', deadline: DateTime.tomorrow, user: user)
     b_date = 18.years.ago
@@ -25,9 +25,9 @@ RSpec.describe ProjectApplication, type: :model do
     pending = project_application.pending!
 
     expect(project_application).to be_pending
-  end 
+  end
 
-  it "project accepted by user" do 
+  it "project accepted by user" do
     user = User.create!(email: 'asdf@nha.com.br', password: '123456')
     project = Project.create!(title: "Test", skills: "testing", description: "description", price_per_hour: '230', deadline: DateTime.tomorrow, user: user)
     b_date = 18.days.ago
@@ -38,5 +38,5 @@ RSpec.describe ProjectApplication, type: :model do
     accepted = project_application.accepted!
 
     expect(project_application).to be_accepted
-  end 
+  end
 end

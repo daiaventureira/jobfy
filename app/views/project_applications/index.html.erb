@@ -15,7 +15,7 @@
   <% end %>
   <% if is_current_professional_signed_in(p) && p.reason%>
     <p class="alert alert-primary" role="alert">Você cancelou essa aplicação com a justificativa de: <%= p.reason%></p>
-  <% elsif is_current_professional_signed_in(p) && p.pending? && p.project.active? %>
+  <% elsif is_current_professional_signed_in(p) && p.pending? && p.project.active? && !p.project.exceed_deadline?%>
     <p class="alert alert-primary" role="alert">Sua candidatura está pendente</p>
     <p><%=link_to "Cancelar sua aplicação", project_application_path(p, p.id), method: :delete %></p>
   <% elsif is_current_professional_signed_in(p) && p.accepted?  %>
@@ -27,6 +27,10 @@
     <% end %>
   <% elsif is_current_professional_signed_in(p) && p.rejected? && p.project.active? %>
     <p class="alert alert-danger" role="alert">Sua candidatura foi recusada mas não desanime! Temos muitos projetos que encaixam no seu perfil</p>
+  <% elsif p.project.closed? %>
+    <p class="alert alert-danger" role="alert">Inscrições fechadas</p>
+     <% elsif p.project.exceed_deadline? %>
+    <p class="alert alert-danger" role="alert">Inscrições fechadas</p>
   <% end %>
 <% end %>
 <% if user_signed_in?%>
